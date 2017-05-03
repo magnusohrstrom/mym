@@ -2,7 +2,6 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    include("database/connection.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +32,7 @@
         </section>
         <?php include 'partials/login-form.php'; ?>
         <?php include 'partials/sign-up-form.php'; ?>
-        <?php include 'partials/post-form.php';?>
+        <?php include 'partials/post-form.php'; ?>
       </main>
     </body>
 </html>
