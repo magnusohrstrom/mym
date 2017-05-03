@@ -1,4 +1,4 @@
-<form class="login-form card" action="index.php" method="post">
+<form class="login-form col-sm-6" action="index.php" method="post">
   <h3>Log in</h3>
   <label for="username">Username</label>
   <input type="text" name="username" value="">

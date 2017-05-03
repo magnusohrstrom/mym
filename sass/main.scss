@@ -2,7 +2,6 @@
 @import "forms";
 body, html {
   overflow-x: hidden;
-
 }
 
 body {
@@ -18,38 +17,63 @@ header {
   top:0;
   left:0;
   z-index:1000;
-  background: white;
+  background: $darkgrey;
   width: 100vw;
-  height: 2em;
+  height: auto;
   @include flexbox();
   @include justify-content(space-between);
   @include align-items(center);
   @include flex-direction(row);
-
+  & a {
+    color:white;
+    margin:0 2em 0 2em;
+  }
+  /*
   & nav {
     @include flexbox();
     @include justify-content(space-between);
     @include flex-direction(row);
     @include align-items(center);
-    width: 60%;
-  }
+    width: 50%;
+  }*/
+
+
 }
 
+.nav {
+  background: $darkgrey;
+  & button {
+    background: $siris;
+  }
+}
 main {
-  width: 100%;
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(column);
+  width: 100vw;
   height: auto;
+
+  padding:0;
+
 }
 
 .header-title {
   font-size: 1.5em;
 }
 
-.post {
-  height: 10em;
-  width: 100%;
-  background: $darkgrey;
-  //margin:1em;
-  padding:0;
-  margin:1em 0 0 0;
 
+.hero {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(column);
+  margin:2em 0 2em 0;
+  background: $grey;
+  height: 20em;
+  width: 100vw;
+  & h1 {
+    font-size: 6em;
+    color: $siris;
+  }
 }

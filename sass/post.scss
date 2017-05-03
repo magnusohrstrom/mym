@@ -1,0 +1,11 @@
+.post-section {
+  height: 10em;
+  width: 100%;
+  background: $darkgrey;
+  padding:0;
+  margin:1em 0 0 0;
+  & article {
+    height:auto;
+    
+  }
+}
