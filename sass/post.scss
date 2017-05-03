@@ -1,4 +1,8 @@
 .post-section {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(row);
   height: 10em;
   width: 100%;
   background: $darkgrey;

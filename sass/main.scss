@@ -41,16 +41,21 @@ header {
 }
 
 .nav {
-  opacity: 1;
-  position: fixed;
   background: $blue;
   & a {
     color: white;
   }
   & button {
-    background: $siris;
+    background: white;
   }
 }
+.nav-brand.nav-title {
+  & a {
+      color:$siris;
+  }
+
+}
+
 main {
   @include flexbox();
   @include justify-content(center);

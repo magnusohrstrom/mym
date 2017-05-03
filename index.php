@@ -13,19 +13,20 @@
       <!--header-->
         <?php include 'partials/navbar.php';?>
       <!--mainsection-->
-      <main>
+      <main class= "container">
         <section class="hero">
           <h1>MYM</h1>
           <h2>Social posting!</h2>
+          <?php include 'partials/login-form.php'; ?>
         </section>
         <section class="row post-section">
-          <article class="col-sm-8">
+          <article class="col-sm-6">
             <h3>title</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></article>
         </section>
         <section class="row post">
         </section>
-        <?php include 'partials/login-form.php'; ?>
+
         <?php include 'partials/sign-up-form.php'; ?>
 
         <?php include 'partials/post-form.php'; ?>

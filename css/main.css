@@ -40,9 +40,9 @@ form {
     margin: 0; }
 
 .login-form {
-  height: 15em;
+  height: 30em;
   width: 100%;
-  background: #C6D2ED; }
+  background: #266DD3; }
 
 .sign-up-form {
   height: 20em;
@@ -101,13 +101,14 @@ header {
     margin: 0 2em 0 2em; }
 
 .nav {
-  opacity: 1;
-  position: fixed;
   background: #266DD3; }
   .nav a {
     color: white; }
   .nav button {
-    background: #C4055E; }
+    background: white; }
+
+.nav-brand.nav-title a {
+  color: #C4055E; }
 
 main {
   display: -webkit-box;
