@@ -18,15 +18,26 @@ session_start();
                     <div class="col col-sm-12">
                         <h1>Register</h1>
                         <h5><a href="login_form.php">login</a></h5>
+                        <?php 
+                            if($_SESSION['error']):
+                                echo $_SESSION['error'];
+                                unset($_SESSION['error']);
+                            endif; 
+                        ?>
                     </div>
                     <div class="col col-sm-12">
-                        <form action="" method="POST" class="form-horizontal" id="signup_form">
+                        <form action="register.php" method="POST" class="form-horizontal" id="signup_form">
 
                             <div class="form-group">
                                 <label for="username" class="col-sm-2 control-label">Username</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="username" id="username" placeholder="Enter username">
-                                    <span id="user_error" class="sr-only  has-error">Please enter valid username</span>
+                                    <?php 
+                                        if($_SESSION['duplication']):
+                                            echo $_SESSION['duplication'];
+                                            unset($_SESSION['duplication']);
+                                        endif; 
+                                    ?>
                                 </div>
                             </div>
 
@@ -34,11 +45,7 @@ session_start();
                                 <label for="password" class="col-sm-2 control-label">Password</label>
                                 <div class="col-sm-10">
                                     <input type="password" name="password" id="password" placeholder="Enter password">
-                                    <?php if($message): ?>
-                                        <span id="user_error" class="has-error">
-                                        <?= $message ?>
-                                        </span>
-                                    <?php endif; ?>
+                                    
                                 </div>
                             </div>
 
@@ -46,7 +53,13 @@ session_start();
                                 <label for="confirm" class="col-sm-2 control-label">Confirm your password</label>
                                 <div class="col-sm-10">
                                     <input type="password" name="confirm_password" id="confirm" placeholder="confirm password">
-                                    <span id="pwd_error" class="sr-only  has-error">Password is incorrect</span>
+                                    <?php 
+                                        if($_SESSION['confirm']):
+                                            echo $_SESSION['confirm'];
+                                            unset($_SESSION['confirm']);
+                                        endif; 
+                                    ?>
+
                                 </div>
                             </div>
 

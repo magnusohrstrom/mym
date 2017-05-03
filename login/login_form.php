@@ -1,6 +1,5 @@
 <?php 
     session_start();
-    $_SESSION['message'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +26,12 @@
                                 <label for="username" class="col-sm-2 control-label">Username</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="username" id="username" placeholder="Enter username">
-                                    <span id="user_error" class="sr-only  has-error">Please enter valid username</span>
+                                   <?php 
+                                        if($_SESSION['username']):
+                                            echo $_SESSION['username'];
+                                            unset($_SESSION['username']);
+                                        endif; 
+                                    ?> 
                                 </div>
                             </div>
 
@@ -35,7 +39,6 @@
                                 <label for="password" class="col-sm-2 control-label">Password</label>
                                 <div class="col-sm-10">
                                     <input type="password" name="password" id="password" placeholder="Enter password">
-                                    <span id="user_error" class="sr-only  has-error">Please enter valid username</span>
                                 </div>
                             </div>
 
