@@ -12,5 +12,8 @@
     </head>
     <body>
         <h1>MYM</h1>
+        <?php
+        
+        ?>
     </body>
 </html>
