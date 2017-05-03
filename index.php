@@ -28,7 +28,17 @@
         </section>
         <?php include 'partials/login-form.php'; ?>
         <?php include 'partials/sign-up-form.php'; ?>
-        <?php include 'partials/post-form.php';?>
+        <?php include 'partials/post-form.php';
+        include 'partials/magnustest/Post.php';
+          /*
+        include 'partials/magnustest/Users.php';
+          $hej = new User($pdo, null, 'hej', 'pass', true);
+          $hej->getAllUsers();
+          $hej->addNewUser();
+          $hej->getAllUsers();        */
+
+
+        ?>
       </main>
     </body>
 </html>
