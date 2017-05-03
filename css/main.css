@@ -67,7 +67,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  background: #344055;
+  background: white;
   width: 100vw;
   height: auto;
   display: -webkit-box;
@@ -101,7 +101,7 @@ header {
     margin: 0 2em 0 2em; }
 
 .nav {
-  background: #344055; }
+  background: white; }
   .nav button {
     background: #C4055E; }
 
@@ -150,12 +150,12 @@ main {
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 2em 0 2em 0;
-  background: #C6D2ED;
-  height: 20em;
+  margin: 0 2em 0;
+  background: #266DD3;
+  height: 40em;
   width: 100vw; }
   .hero h1 {
-    font-size: 6em;
-    color: #C4055E; }
+    font-size: 12em;
+    color: white; }
 
 /*# sourceMappingURL=main.css.map */
