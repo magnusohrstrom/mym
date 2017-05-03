@@ -13,7 +13,7 @@
         <a class="nav-link" href="#">Add post</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Sign up</a>
+        <a class="nav-link" href="#">Sign up</a>
       </li>
     </ul>
 

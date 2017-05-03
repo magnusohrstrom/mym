@@ -17,7 +17,7 @@ header {
   top:0;
   left:0;
   z-index:1000;
-  background: $darkgrey;
+  background: white;
   width: 100vw;
   height: auto;
   @include flexbox();
@@ -41,7 +41,7 @@ header {
 }
 
 .nav {
-  background: $darkgrey;
+  background: white;
   & button {
     background: $siris;
   }
@@ -69,11 +69,11 @@ main {
   @include align-items(center);
   @include flex-direction(column);
   margin: 0 2em 0;
-  background: $white;
+  background: $blue;
   height: 40em;
   width: 100vw;
   & h1 {
     font-size: 12em;
-    color: $siris;
+    color: white;
   }
 }
