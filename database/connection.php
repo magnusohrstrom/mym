@@ -6,7 +6,7 @@
     ];
 
     $pdo = new pdo(
-        'mysql:host=localhost:8889;dbname=mym;charset=utf8',
+        'mysql:host=localhost;dbname=mym;charset=utf8',
         'root',
         'root',
         $options
