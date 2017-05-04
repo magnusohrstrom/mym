@@ -45,6 +45,9 @@ form {
   form button {
     margin-top: 1em; }
 
+.error-msg {
+  color: #C4055E; }
+
 .login-form {
   width: 100%;
   min-height: 15em; }
