@@ -26,7 +26,7 @@ if($username && $password):  #to make sure both are filled in
         
         if($_SESSION['status']):
             $_SESSION['username'] = $username;
-            header('Location: loggedin.php');
+            header('Location: ../index.php');
         else:
             $_SESSION['pass_error'] = 'Sorry, wrong password';
             header('Location: ../index.php#login');
