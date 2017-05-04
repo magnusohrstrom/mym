@@ -1,14 +1,14 @@
-.post-section {
+footer {
   @include flexbox();
   @include justify-content(center);
   @include align-items(center);
   @include flex-direction(row);
-  height: 10em;
+  bottom:0;
+  left:0;
   width: 100%;
-  background: $darkgrey;
-  padding:0;
-  margin:1em 0 0 0;
-  & article {
-    height:auto;
+  height: 2em;
+  background:black;
+  & a {
+    color:white;
   }
 }

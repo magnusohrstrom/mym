@@ -1,4 +1,4 @@
-<form class="post-form card" action="posts/postThis.php" method="post">
+<form class="post-form col-sm-4" action="posts/postThis.php" method="post">
   <h3>Post</h3>
   <label for="title">Title</label>
   <input type="text" name="title" value="">
