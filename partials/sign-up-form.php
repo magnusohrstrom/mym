@@ -1,13 +1,9 @@
-<?php
-#Detta kan tas bort när denna satts på index.php
-session_start();
-?>
-<form class="sign-up-form col-sm-6" action="../login/register.php" method="post">
+<form id="reg" class="sign-up-form col-sm-6" action="../mym/login/register.php" method="post">
     <h3>Sign up</h3>
     <h5><a href="#">Already a user?</a></h5>
     
     <!-- warning for empty form -->
-    <?php if($_SESSION['reg_error']): ?>
+    <?php if(isset($_SESSION['reg_error'])): ?>
     <span class="error-msg">
         <?= $_SESSION['reg_error']; ?>
         <?php unset($_SESSION['reg_error']); ?>
@@ -23,7 +19,7 @@ session_start();
     <input type="text" name="username" value="">
     
     <!-- message for exiting username -->
-    <?php if($_SESSION['duplication']): ?>
+    <?php if(isset($_SESSION['duplication'])): ?>
     <span class="error-msg">
         <?= $_SESSION['duplication']; ?>
         <?php unset($_SESSION['duplication']); ?>
@@ -36,20 +32,19 @@ session_start();
     <input type="password" id="confirm" name="confirm_password" value="">
     
     <!-- message for unmatch password -->
-    <?php if($_SESSION['confirm']): ?>
+    <?php if(isset($_SESSION['confirm'])): ?>
     <span class="error-msg">
         <?= $_SESSION['confirm']; ?>
         <?php unset($_SESSION['confirm']); ?>
     </span>            
     <?php endif; ?>
     
-    <label>Choose Type</label>
-    <label for="normal">
-        <input type="radio" name="isAdmin" value="false" id="normal" checked="checked">Normal User
-    </label>
-    <label for="admin">
-        <input type="radio" name="isAdmin" value="true" id="admin">Admin
-    </label>
+    <label>Choose User Type</label>
+    <label for="normal">Normal User</label>
+    <input type="radio" name="isAdmin" value="false" id="normal" checked="checked">
+    <label for="admin">Admin</label>
+    <input type="radio" name="isAdmin" value="true" id="admin">
+    
   <div class="btn-group">
     <button type="submit" class="btn btn-secondary" name="button">Sign up</button>
     <button type="reset" class="btn btn-default">Cancel</button>

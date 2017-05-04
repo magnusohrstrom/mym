@@ -2,9 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 session_start();
-header('Location: ../partials/login-form.php');
 require 'class_login.php';
 //--Connection ------------------------------
 require '../database/connection.php';
@@ -22,7 +20,7 @@ if($username && $password):  #to make sure both are filled in
 
     if(empty($user)):
         $_SESSION['name_error'] ='username not found';
-
+    header('Location: ../index.php#login');
     else:
         $askDB->verify($password);  #Calling the "verify" function
         
@@ -31,14 +29,14 @@ if($username && $password):  #to make sure both are filled in
             header('Location: loggedin.php');
         else:
             $_SESSION['pass_error'] = 'Sorry, wrong password';
-
+            header('Location: ../index.php#login');
         endif;
 
     endif;    
 
 else:
     $_SESSION['input_error'] = 'Please fill in the form';
-
+    header('Location: ../index.php#login');
 endif;
 
 

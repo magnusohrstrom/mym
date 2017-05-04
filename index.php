@@ -2,7 +2,6 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-
     session_start();
 ?>
 <!DOCTYPE html>
@@ -24,7 +23,8 @@
         <section class="hero">
           <h1>MYM</h1>
           <h2>Social posting!</h2>
-          <?php include 'partials/login-form.php'; ?>
+        <?php include_once 'partials/login-form.php'; ?>
+            
         </section>
         <section class=" col-sm-6 post-section">
           <article class="">
@@ -34,7 +34,7 @@
         <section class="row post">
         </section>
 
-        <?php include 'partials/sign-up-form.php'; ?>
+        <?php include_once 'partials/sign-up-form.php'; ?>
 
         <?php include 'partials/post-form.php'; ?>
 
