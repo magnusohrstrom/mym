@@ -101,7 +101,11 @@ header {
     margin: 0 2em 0 2em; }
 
 .nav {
-  background: white; }
+  opacity: 1;
+  position: fixed;
+  background: #266DD3; }
+  .nav a {
+    color: white; }
   .nav button {
     background: #C4055E; }
 
