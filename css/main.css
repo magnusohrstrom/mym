@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, .header-title {
+h1, h2, h3, h4, h5, label, .header-title {
   font-family: 'Abel', sans-serif; }
 
 p {
@@ -6,14 +6,19 @@ p {
 
 a {
   text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
 
+/*------------- Breakpoints mixin*/
 /*------------- Flexbox mixins*/
 /*------------- Flexbox center mixin*/
 /*---------------Mixins for transforms, transitions and animations*/
 /*Mixin for animation on contact page*/
 /*Mixin for hide & show*/
 form {
-  margin: 1em 0 0 0;
+  border: 0.2em solid black;
+  padding: 1em;
+  margin: 2em 0 2em 0;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -36,21 +41,46 @@ form {
   form input {
     width: 100%; }
   form label {
-    font-size: 1em;
-    margin: 0; }
+    font-size: 1em; }
+  form button {
+    margin-top: 1em; }
 
 .login-form {
-  height: 15em;
   width: 100%;
-  background: #C6D2ED; }
+  min-height: 15em; }
 
 .sign-up-form {
-  height: 20em;
-  width: 100%;
-  background: #C6D2ED; }
+  width: 100%; }
 
 .post-form {
-  background: #C6D2ED; }
+  width: 100%; }
+
+footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2em;
+  background: black; }
+  footer a {
+    color: white; }
 
 body, html {
   overflow-x: hidden; }
@@ -59,16 +89,23 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 200em;
-  background: white; }
+  background: black;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  transition: all 0.7s ease; }
+  body.active {
+    background: white; }
+  body.active.active2 {
+    background: #266DD3; }
 
 header {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  background: white;
-  width: 100vw;
+  width: 100%;
   height: auto;
   display: -webkit-box;
   display: -moz-box;
@@ -97,17 +134,40 @@ header {
     width: 50%;
   }*/ }
   header a {
+    font-size: 1em;
     color: white;
     margin: 0 2em 0 2em; }
 
 .nav {
-  opacity: 1;
-  position: fixed;
-  background: #266DD3; }
+  z-index: 1000;
+  width: 80%;
+  height: 2em;
+  padding: 0 2em 0 2em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row; }
   .nav a {
-    color: white; }
+    color: black; }
   .nav button {
-    background: #C4055E; }
+    background: white; }
+
+.nav-brand.nav-title a {
+  color: #C4055E; }
 
 main {
   display: -webkit-box;
@@ -132,9 +192,6 @@ main {
   height: auto;
   padding: 0; }
 
-.header-title {
-  font-size: 1.5em; }
-
 .hero {
   display: -webkit-box;
   display: -moz-box;
@@ -154,12 +211,23 @@ main {
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0 2em 0;
-  background: #266DD3;
-  height: 40em;
+  margin: 0em 2em 0;
   width: 100vw; }
   .hero h1 {
-    font-size: 12em;
-    color: white; }
+    font-size: 10em;
+    color: white;
+    margin: 1.5em 0 0 0; }
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 7em;
+        margin: 2em 0 0 0; } }
+  .hero h2 {
+    color: #9F9AA4; }
+
+#nav-title {
+  font-size: 2em;
+  color: white; }
+  #nav-title.active {
+    color: black; }
 
 /*# sourceMappingURL=main.css.map */
