@@ -1,12 +1,12 @@
 <?php
+#Detta kan tas bort när denna satts på index.php
 session_start();
 ?>
-
 <form class="login-form col-sm-6" action="../login/login.php" method="post">
     <h3>Log in</h3>
-    <h5><a href="sign-up-form.php">Don't have an account?</a></h5>
+    <h5><a href="#">Don't have an account?</a></h5>
     <label for="username">Username</label>
-    <input type="text" name="username" value="" placeholder="Enter username">
+    <input type="text" name="username" value="">
     
     <!-- error message for wrong username -->
     <?php if($_SESSION['name_error']): ?>
@@ -18,7 +18,7 @@ session_start();
     
     
     <label for="password">Password</label>
-    <input type="text" name="password" value="" placeholder="Enter password">
+    <input type="password" name="password" value="">
     
     <!-- error message for wrong password -->
     <?php if($_SESSION['pass_error']): ?>

@@ -1,11 +1,10 @@
-<?php 
-#Detta ska tas bort när man sätter ihop i index.php
+<?php
+#Detta kan tas bort när denna satts på index.php
 session_start();
 ?>
-
 <form class="sign-up-form col-sm-6" action="../login/register.php" method="post">
     <h3>Sign up</h3>
-    <h5><a href="login-form.php">Already a user?</a></h5>
+    <h5><a href="#">Already a user?</a></h5>
     
     <!-- warning for empty form -->
     <?php if($_SESSION['reg_error']): ?>
@@ -16,12 +15,12 @@ session_start();
     <?php endif; ?>
 
     <label for="first">First Name</label>
-    <input type="text" id="first" name="first-name" value="" placeholder="First name">
+    <input type="text" id="first" name="first-name" value="">
     <label for="last">Last Name</label>
-    <input type="text" id="last" name="last-name" value="" placeholder="Last name">
+    <input type="text" id="last" name="last-name" value="">
 
     <label for="username">Username</label>
-    <input type="text" name="username" value="" placeholder="Enter username">
+    <input type="text" name="username" value="">
     
     <!-- message for exiting username -->
     <?php if($_SESSION['duplication']): ?>
@@ -32,9 +31,9 @@ session_start();
     <?php endif; ?>
     
     <label for="password">Password</label>
-    <input type="password" id="password" name="password" value="" placeholder="Enter password">
+    <input type="password" id="password" name="password" value="">
     <label for="confirm">Confirm password</label>
-    <input type="password" id="confirm" name="confirm_password" value="" placeholder="Confirm password">
+    <input type="password" id="confirm" name="confirm_password" value="">
     
     <!-- message for unmatch password -->
     <?php if($_SESSION['confirm']): ?>
