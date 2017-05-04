@@ -1,20 +1,39 @@
-$grey:#C6D2ED;
+$grey:#9F9AA4;
 $siris: #C4055E;
 $darkgrey:#344055;
 $blue:#266DD3;
 
 
 //Typography
-h1,h2,h3,h4,h5, .header-title {
+h1,h2,h3,h4,h5, label, .header-title {
 font-family: 'Abel', sans-serif;
 }
 
-p {
+p{
   font-family: 'Playfair Display', serif;
 }
 a {
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
+
+/*------------- Breakpoints mixin*/
+
+$breakpoints: ( 'xxsmall': ( max-width: 360px),'xsmall': ( max-width: 375px), 'small': ( max-width: 464px),'smedium': ( max-width: 785px ), 'medium': ( max-width: 900px), 'large': ( max-width: 1100px), 'xlarge': ( max-width: 1300px), 'xxlarge': ( max-width:1440px));
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "No breakpoint with this name `#{$name}`.";
+    }
+}
+
+
 
 /*------------- Flexbox mixins*/
 
