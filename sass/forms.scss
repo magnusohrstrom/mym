@@ -17,6 +17,10 @@ form {
   }
 }
 
+.error-msg {
+    color: $siris;
+}
+
 .login-form {
   height:15em;
   width: 100%;
@@ -25,7 +29,7 @@ form {
 
 
 .sign-up-form {
-  height:25em;
+  height:20em;
   width: 100%;
   background:$grey;
 }

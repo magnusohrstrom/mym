@@ -86,7 +86,7 @@ session_start();
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <button type="submit" class="btn btn-default">SING UP</button>
-                                    <a href="#">Cancel</a>
+                                    <button type="reset" class="btn btn-default">Cancel</button>
                                  </div>
                             </div>
 

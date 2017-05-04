@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if(isset($_SESSION['status'])){
-   echo "Welcome " . $_SESSION['username'] . " " . $_SESSION['status'];   
+if($_SESSION['status']){
+   echo "Welcome " . $_SESSION['username'] . " You are logged in!";   
 }
 
 
