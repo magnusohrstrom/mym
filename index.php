@@ -35,6 +35,7 @@
         <?php include 'partials/sign-up-form.php'; ?>
 
         <?php include 'partials/post-form.php'; ?>
+  
 
       </main>
       <?php include 'partials/footer.php'; ?>
