@@ -7,7 +7,7 @@ class db
         PDO::ATTR_EMULATE_PREPARES   => false
         ];
     
-    public static function connection()
+    public static function connection($yourhost)
     {  
         $dsn='mysql:dbname=mym;charset=utf8;host=' . $yourhost;
         return new PDO($dsn, 'root', 'root', self::$options);

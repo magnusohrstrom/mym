@@ -21,9 +21,7 @@ if($username && $password):  #to make sure both are filled in
         $askDB->verify($password);  #Calling the "verify" function
         
         if($_SESSION['status']):
-            (!empty($user['first'])) ? 
-                $_SESSION['username'] = $user['first'] : 
-                $_SESSION['username'] = $username;
+            $_SESSION['username'] = (!empty($user['first'])) ? $user['first'] : $username;
             header('Location: ../index.php');
         else:
             $_SESSION['pass_error'] = 'Sorry, wrong password';
