@@ -24,14 +24,18 @@ class Register
     }
     
      public function add_user($name){
-            $sql = "INSERT INTO user(username, password, isAdmin) VALUES(:username, :password, :isAdmin)";
+            $sql = "INSERT INTO user(first, last, username, password, isAdmin) VALUES(:first, :last, :username, :password, :isAdmin)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
+                ":first" => $_POST['first-name'],
+                ":last" => $_POST['last-name'],
                 ":username" => $name,
                 ":password" => $this->hashed,
                 ":isAdmin" => $_POST['isAdmin']
             ]);
-            $_SESSION['username'] = $name;
+            (!empty($_POST['first-name'])) ?
+                $_SESSION['username'] = $_POST['first-name'] : 
+                $_SESSION['username'] = $name;
             $_SESSION['status'] = true;
      }
 }

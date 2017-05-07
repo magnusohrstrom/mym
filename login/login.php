@@ -1,13 +1,9 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 session_start();
 require 'class_login.php';
 //--Connection ------------------------------
 require '../database/connection.php';
-$mylocal = "localhost";
-$pdo=db::connection($mylocal);
+require '../database/pdo.php';
 //--------------------------------------------
 
 $username = $_POST['username'];
@@ -25,7 +21,9 @@ if($username && $password):  #to make sure both are filled in
         $askDB->verify($password);  #Calling the "verify" function
         
         if($_SESSION['status']):
-            $_SESSION['username'] = $username;
+            (!empty($user['first'])) ? 
+                $_SESSION['username'] = $user['first'] : 
+                $_SESSION['username'] = $username;
             header('Location: ../index.php');
         else:
             $_SESSION['pass_error'] = 'Sorry, wrong password';

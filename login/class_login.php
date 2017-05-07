@@ -30,4 +30,13 @@ class Login
             $_SESSION['status'] = false;
         endif;
     }
+    
+    public function check_admin($name)
+    {
+        $sql = "SELECT isAdmin FROM user WHERE username = :username";
+        $st = $this->pdo->prepare($sql);
+        $st->execute([':username' => $name]);
+        $_SESSION['admin'] = $st->fetch();
+        return $_SESSION['admin'];
+    }
 }
