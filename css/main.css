@@ -55,6 +55,13 @@ form {
 .post-form {
   width: 100%; }
 
+.comment-form {
+  width: 100%;
+  height: 20em;
+  border: 0.2em solid black; }
+  .comment-form input {
+    width: 100%; }
+
 footer {
   display: -webkit-box;
   display: -moz-box;
@@ -89,7 +96,6 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  background: black;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
   -ms-transition: all 0.7s ease;
