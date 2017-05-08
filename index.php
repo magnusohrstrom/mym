@@ -1,19 +1,13 @@
 <?php
-<<<<<<< HEAD
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    session_start(); 
-=======
-    session_start();
->>>>>>> master
+  session_start();
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-
       <?php include("partials/head.php");?>
-
     </head>
     <body>
       <!--header-->
@@ -28,7 +22,7 @@
           <h1>MYM</h1>
           <h2>Social posting!</h2>
         <?php include_once 'partials/login-form.php'; ?>
-            
+
         </section>
         <section class=" col-sm-6 post-section">
           <article class="">
