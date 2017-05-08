@@ -22,6 +22,10 @@ if($username && $password):  #to make sure both are filled in
         
         if($_SESSION['status']):
             $_SESSION['username'] = (!empty($user['first'])) ? $user['first'] : $username;
+            $_SESSION['userId'] = $user['userId'];
+            $_SESSION['first'] = $user['first'];
+            $_SESSION['last'] = $user['last'];
+            $_SESSION['isAdmin'] = $user['isAdmin'];
             header('Location: ../index.php');
         else:
             $_SESSION['pass_error'] = 'Sorry, wrong password';
