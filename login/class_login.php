@@ -39,4 +39,9 @@ class Login
         $_SESSION['admin'] = $st->fetch();
         return $_SESSION['admin'];
     }
+    
+    public function save_to_session()
+    {
+        
+    }
 }
