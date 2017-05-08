@@ -39,9 +39,10 @@
         <?php include_once 'partials/sign-up-form.php'; ?>
 
         <?php include 'partials/post-form.php';
-        include 'partials/getbutton.php';
-  
 
+        include 'posts/postList.php';
+        //include 'partials/getbutton.php';
+        //include 'comments/getAllComments.php';
         ?>
 
       </main>
