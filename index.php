@@ -40,7 +40,7 @@
 
         <?php include 'partials/post-form.php';
         include 'partials/getbutton.php';
-        include 'comments/getAllComments.php';
+    
 
         ?>
 
