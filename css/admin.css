@@ -1,0 +1,58 @@
+h1, h2, h3, h4, h5, label, .header-title {
+  font-family: 'Abel', sans-serif; }
+
+p {
+  font-family: 'Playfair Display', serif; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
+
+/*------------- Breakpoints mixin*/
+/*------------- Flexbox mixins*/
+/*------------- Flexbox center mixin*/
+/*---------------Mixins for transforms, transitions and animations*/
+/*Mixin for animation on contact page*/
+/*Mixin for hide & show*/
+footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2em;
+  background: black; }
+  footer a {
+    color: white; }
+
+.admin-body {
+  background: #fff; }
+
+.mym-dropdown {
+  background: #344055; }
+
+.mym-dp-item {
+  color: #fff; }
+
+.admin-thead {
+  background: #344055;
+  color: #fff; }
+
+/*# sourceMappingURL=admin.css.map */
