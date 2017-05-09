@@ -1,9 +1,4 @@
 <?php
-  include "database/connection.php";
-
-  $pdo = db::connection();
-
-
   class Post {
     private $pdo;
 
@@ -15,11 +10,9 @@
       $st = $this->pdo->prepare("SELECT * FROM post");
       $st->execute();
       $posts = $st->fetchAll();
-      var_dump($posts);
+      return $posts;
+
     }
   }
-  $hej = new Post($pdo);
-  $hej->getAllPosts();
-
 
  ?>

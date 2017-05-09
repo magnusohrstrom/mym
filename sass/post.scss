@@ -3,11 +3,12 @@
   @include justify-content(center);
   @include align-items(center);
   @include flex-direction(row);
-  height: 10em;
+  height: auto;
   width: 100%;
-  background: $darkgrey;
+  background: $grey;
   padding:0;
   margin:1em 0 0 0;
+  border:0.2em solid black;
   & article {
     height:auto;
   }
