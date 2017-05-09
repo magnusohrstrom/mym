@@ -1,7 +1,7 @@
 <nav class="nav">
     <a class="" href="#">Add post</a>
 <?php if(isset($_SESSION['username'])): ?>
-    <?php if(isset($_SESSION['admin'])) : ?>
+    <?php if($_SESSION['admin']) : ?>
         <a class="menu-admin" href="#"><?= $_SESSION['username'] ?></a>
     <?php else:?>
         <a><?= $_SESSION['username'] ?></a>

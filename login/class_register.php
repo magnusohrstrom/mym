@@ -33,7 +33,11 @@ class Register
                 ":password" => $this->hashed,
                 ":isAdmin" => $_POST['isAdmin']
             ]);
-            $_SESSION['username'] = (!empty($_POST['first-name'])) ? $_POST['first-name'] : $name;
             $_SESSION['status'] = true;
      }
+    
+    public function create_session($name){
+        $_SESSION['username'] = ($_POST['first']) ? $_POST['first'] : $name;
+        $_SESSION['isAdmin'] = $_POST['isAdmin'];
+    }
 }
