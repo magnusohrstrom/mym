@@ -24,6 +24,7 @@ if($username && $password):  #to make sure both are filled in
             (!empty($user['first'])) ? 
                 $_SESSION['username'] = $user['first'] : 
                 $_SESSION['username'] = $username;
+                $_SESSION['userId']   = $user['userId'];
             header('Location: ../index.php');
         else:
             $_SESSION['pass_error'] = 'Sorry, wrong password';
