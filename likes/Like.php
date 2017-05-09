@@ -1,5 +1,4 @@
 <?php
-$session_start();
 
 class Like {
 
@@ -20,11 +19,14 @@ class Like {
       ":postId" => $postId
     ]);
   }
-  public function getAllLikes(){
-    $st = $this->pdo->prepare('SELECT * FROM likes');
-    $st->execute();
+  public function getLikesForPost($postId){
+    $st = $this->pdo->prepare(
+    'SELECT COUNT(*) FROM likes WHERE postId = :postId');
+    $st->execute([
+      ':postId' => $postId
+    ]);
     $list = $st->fetchAll();
-    var_dump($list);
+    var_dump(json_encode($list));
   }
 }
 
