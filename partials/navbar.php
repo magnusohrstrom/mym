@@ -1,6 +1,6 @@
 <nav class="nav">
 <?php
-    if(isset($_SESSION['isAdmin']) && ($_SESSION['isAdmin']===1)){
+    if(isset($_SESSION['isAdmin']) && ($_SESSION['isAdmin']==true)){
         echo '<a>Admin</a>';
         }
     else {}
