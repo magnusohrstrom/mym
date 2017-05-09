@@ -9,7 +9,7 @@ $(function(){
         last = $('#last').val(),
         password = $('#password').val(),
         password2 = $('#confirm_password').val(),
-        admin = $('input[name="isAdmin"]').val();
+        admin = $('input[name=isAdmin]:checked').val();
         
         let data = {
                     username: username,

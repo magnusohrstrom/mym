@@ -20,9 +20,9 @@
     
     <label>Choose User Type</label>
     <label for="normal">Normal User</label>
-    <input type="radio" name="isAdmin" value="false" checked="checked">
+    <input type="radio" id="normal" name="isAdmin" value="0" checked="checked">
     <label for="admin">Admin</label>
-    <input type="radio" name="isAdmin" value="true">
+    <input type="radio" id="admin" name="isAdmin" value="1">
         
   <div class="btn-group">
     <button type="submit" class="btn btn-secondary">Sign up</button>
