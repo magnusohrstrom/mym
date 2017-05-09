@@ -1,6 +1,7 @@
 @import "varmix";
 @import "forms";
 @import "footer";
+@import "post";
 
 body, html {
   overflow-x: hidden;
@@ -11,7 +12,7 @@ body {
   margin:0;
   width: 100%;
 
-  //background: black;
+  background: black;
   @include transition(all 0.7s ease);
   &.active {
     background:white;
@@ -32,10 +33,15 @@ header {
   @include justify-content(space-between);
   @include align-items(center);
   @include flex-direction(row);
+
   & a {
     font-size: 1em;
     color:white;
     margin:0 2em 0 2em;
+  }
+
+  &.admin {
+    background: $blue;
   }
   /*
   & nav {
@@ -61,7 +67,9 @@ header {
   & a { color: black;}
   & button {
     background: white;
-
+  }
+  &.admin-nav {
+    background: $blue;
   }
 }
 .nav-brand.nav-title {
@@ -110,5 +118,19 @@ main {
   color:white;
   &.active {
     color:black;
+  }
+}
+
+.like-form {
+  position: relative;
+  height: 3em;
+  width: 3em;
+  & input {
+    position: absolute;
+    top:50%;
+    left:50%;
+    height: 1em;
+    width: 1em;
+    background: $blue;
   }
 }

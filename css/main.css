@@ -92,6 +92,34 @@ footer {
   footer a {
     color: white; }
 
+.post-section {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  background: #9F9AA4;
+  padding: 0;
+  margin: 1em 0 0 0;
+  border: 0.2em solid black; }
+  .post-section article {
+    height: auto; }
+
 body, html {
   overflow-x: hidden; }
 
@@ -99,6 +127,7 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
+  background: black;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
   -ms-transition: all 0.7s ease;
@@ -146,6 +175,8 @@ header {
     font-size: 1em;
     color: white;
     margin: 0 2em 0 2em; }
+  header.admin {
+    background: #266DD3; }
 
 .nav {
   z-index: 1000;
@@ -174,6 +205,8 @@ header {
     color: black; }
   .nav button {
     background: white; }
+  .nav.admin-nav {
+    background: #266DD3; }
 
 .nav-brand.nav-title a {
   color: #C4055E; }
@@ -238,5 +271,17 @@ main {
   color: white; }
   #nav-title.active {
     color: black; }
+
+.like-form {
+  position: relative;
+  height: 3em;
+  width: 3em; }
+  .like-form input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 1em;
+    width: 1em;
+    background: #266DD3; }
 
 /*# sourceMappingURL=main.css.map */
