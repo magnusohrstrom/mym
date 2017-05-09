@@ -13,7 +13,9 @@
       <!--header-->
       <header <?php include 'partials/header-class.php'; ?>>
         <a id="nav-title" href="../index.php">MYM</a>
+          <nav class="nav" id="navbar">
         <?php include 'partials/navbar.php';?>
+          </nav>
       </header>
 
       <!--mainsection-->
@@ -53,6 +55,7 @@
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
       <script src="scripts/main.js" type="text/javascript"></script>
       <script src="scripts/comments.js" type="text/javascript"></script>
-      <script src="scripts/likes.js" type="text/javascript"></script>
+      <script src="scripts/likes.js" type="text/javascript"></script><script src="scripts/register.js" type="text/javascript"></script>
+
     </body>
 </html>
