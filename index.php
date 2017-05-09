@@ -13,9 +13,9 @@
       <!--header-->
       <header <?php include 'partials/header-class.php'; ?>>
         <a id="nav-title" href="../index.php">MYM</a>
-          <nav class="nav" id="navbar">
+
         <?php include 'partials/navbar.php';?>
-          </nav>
+
       </header>
 
       <!--mainsection-->
