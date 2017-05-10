@@ -35,9 +35,18 @@ class Register
             ]);
      }
     
-    public function create_session($name){
+    public function get_all_userinfo($name){
+        $sql = "SELECT * FROM user WHERE username=:user";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":user"=>$name]);
+        return $stmt->fetch();
+    }
+    
+    
+    public function create_session($userArray, $name){
         $_SESSION['login'] = true;
         $_SESSION['username'] = ($_POST['first']) ? $_POST['first'] : $name;
         $_SESSION['isAdmin'] = $_POST['isAdmin'];
+        $_SESSION['userId'] = $userArray['userId'];
     }
 }

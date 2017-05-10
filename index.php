@@ -53,9 +53,11 @@
       <?php include 'partials/footer.php'; ?>
 
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
-      <script src="scripts/main.js" type="text/javascript"></script>
-      <script src="scripts/comments.js" type="text/javascript"></script>
-      <script src="scripts/likes.js" type="text/javascript"></script><script src="scripts/register.js" type="text/javascript"></script>
+        <script src="scripts/main.js" type="text/javascript"></script>
+        <script src="scripts/comments.js" type="text/javascript"></script>
+        <script src="scripts/likes.js" type="text/javascript"></script>
+        <script src="scripts/register.js" type="text/javascript"></script>
+        <script src="scripts/login.js" type="text/javascript"></script>
 
     </body>
 </html>

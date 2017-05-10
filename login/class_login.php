@@ -25,9 +25,9 @@ class Login
     {
         $hashed = $this->userInfo['password'];
         if(password_verify($loginpass, $hashed)):
-            $_SESSION['status'] = true;
+            $_SESSION['passOK'] = true;
         else:
-            $_SESSION['status'] = false;
+            $_SESSION['passOK'] = false;
         endif;
     }
     
