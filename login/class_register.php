@@ -27,15 +27,17 @@ class Register
             $sql = "INSERT INTO user(first, last, username, password, isAdmin) VALUES(:first, :last, :username, :password, :isAdmin)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
-                ":first" => $_POST['first-name'],
-                ":last" => $_POST['last-name'],
+                ":first" => $_POST['first'],
+                ":last" => $_POST['last'],
                 ":username" => $name,
                 ":password" => $this->hashed,
                 ":isAdmin" => $_POST['isAdmin']
             ]);
-            (!empty($_POST['first-name'])) ?
-                $_SESSION['username'] = $_POST['first-name'] : 
-                $_SESSION['username'] = $name;
-            $_SESSION['status'] = true;
      }
+    
+    public function create_session($name){
+        $_SESSION['login'] = true;
+        $_SESSION['username'] = ($_POST['first']) ? $_POST['first'] : $name;
+        $_SESSION['isAdmin'] = $_POST['isAdmin'];
+    }
 }

@@ -1,4 +1,4 @@
-<form id="login" class="login-form col-sm-6" action="../mym/login/login.php" method="post">
+<form id="login-form" class="login-form col-sm-6" action="../mym/login/login.php" method="post">
     <h3>Log in</h3>
     <h5><a href="#">Don't have an account?</a></h5>
     <!-- error message for empty form -->

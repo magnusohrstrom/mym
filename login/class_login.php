@@ -39,4 +39,13 @@ class Login
         $_SESSION['admin'] = $st->fetch();
         return $_SESSION['admin'];
     }
+    
+    public function create_session($userArray, $username)
+    {
+        $_SESSION['username'] = (!empty($userArray['first'])) ? $userArray['first'] : $username;
+        $_SESSION['userId'] = $userArray['userId'];
+        $_SESSION['first'] = $userArray['first'];
+        $_SESSION['last'] = $userArray['last'];
+        $_SESSION['isAdmin'] = $userArray['isAdmin'];
+    }
 }

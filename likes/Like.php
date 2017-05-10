@@ -1,5 +1,4 @@
 <?php
-$session_start();
 
 class Like {
 
@@ -10,21 +9,24 @@ class Like {
     $this->pdo = $pdo;
   }
 
-  public function insertLike()
+  public function insertLike($postId)
   {
-    $st = $this->pdo->prepare('INSERT INTO likes (liketId,userId, postId)
-      VALUES (null,:userId,:postId)');
+    $st = $this->pdo->prepare('INSERT INTO likes (userId, postId)
+      VALUES (:userId,:postId)');
 
     $st->execute([
-      ":userId" => 16,
-      ":postId" => 105
+      ":userId" => $_SESSION['userId'],
+      ":postId" => $postId
     ]);
   }
-  public function getAllLikes(){
-    $st = $this->pdo->prepare('SELECT * FROM likes');
-    $st->execute();
+  public function getLikesForPost($postId){
+    $st = $this->pdo->prepare(
+    'SELECT COUNT(*) FROM likes WHERE postId = :postId');
+    $st->execute([
+      ':postId' => $postId
+    ]);
     $list = $st->fetchAll();
-    var_dump($list);
+    var_dump(json_encode($list));
   }
 }
 

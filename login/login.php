@@ -10,21 +10,17 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 
-if($username && $password):  #to make sure both are filled in
+if($username && $password):
     $askDB = new Login($pdo);
     $user = $askDB->get_info($username);
 
     if(empty($user)):
-        $_SESSION['name_error'] ='username not found';
+        $_SESSION['name_error'] ='Username not found';
     header('Location: ../index.php#login');
     else:
-        $askDB->verify($password);  #Calling the "verify" function
-        
+        $askDB->verify($password);
         if($_SESSION['status']):
-            (!empty($user['first'])) ? 
-                $_SESSION['username'] = $user['first'] : 
-                $_SESSION['username'] = $username;
-                $_SESSION['userId']   = $user['userId'];
+            $askDB->create_session($user, $username);  #Success Login!
             header('Location: ../index.php');
         else:
             $_SESSION['pass_error'] = 'Sorry, wrong password';
