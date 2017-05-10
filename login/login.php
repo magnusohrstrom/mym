@@ -21,7 +21,7 @@ if($username && $password):
         $askDB->verify($password);
         if($_SESSION['status']):
             $askDB->create_session($user, $username);  #Success Login!
-            header('Location: ../index.php');  
+            header('Location: ../index.php');
         else:
             $_SESSION['pass_error'] = 'Sorry, wrong password';
             header('Location: ../index.php#login');

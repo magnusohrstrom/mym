@@ -12,12 +12,12 @@ class newPost
     {
         $stmt = $this->pdo->prepare(
             "INSERT INTO post (title, content, userId, amountOfLikes, timeStamp)
-             VALUES (:title, :content, 1, 0, 123)"
+             VALUES (:title, :content, :userId, 0, 123)"
         );
         $stmt->execute([
             ":title"   => $_POST['title'],
-            ":content" => $_POST['content']
+            ":content" => $_POST['content'],
+            ":userId"  => $_SESSION['userId']
         ]);
     }
-
 }
