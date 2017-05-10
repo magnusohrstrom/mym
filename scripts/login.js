@@ -1,8 +1,10 @@
 $(function(){
+    
     let username = $('#login-username'),
         password = $('#login-password'),
         error = $("#err-msg");
     
+    //--- Ajax functions ----
     let success = (res)=>{
         console.log('success!');
         if(res){
@@ -11,22 +13,26 @@ $(function(){
             return $.Deferred().reject().promise();
         };
     };
-            
-    let reload=()=>{
-        location.reload();
-    }
+    let loader =()=>{
+        let h = $(window).height();
+        $('#loader-bg,.loader, .loader-text').height(h).css('display','block');
+        setTimeout(function(){location.reload()}, 1500);
+    };
 
     let err=()=>{
         console.log('ERROR: Data cannot be sent');
-    }
-
+    };
+    //-----------------------
+    
     $('#login-form').submit(function(event){
         event.preventDefault();
         error.empty();
         let name = username.val(),
             pass = password.val();
         
-        if( name !=="" && pass !=="" ){
+        if( name ==="" && pass ==="" ){
+            error.html('please fill in the form');
+        }else{
             //let formData = $(this).serialize();
             let loginData = {
                                 username: name,
@@ -40,12 +46,8 @@ $(function(){
                 dataType: 'html'
             })
             .then(success)
-            .then(reload)
+            .then(loader)
             .fail(err);
-            
-        }else {
-            error.html('please fill in the form');
         }
-        
     });
 });
