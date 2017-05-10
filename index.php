@@ -17,7 +17,9 @@
       <!--header-->
       <header <?php include 'partials/header-class.php'; ?>>
         <a id="nav-title" href="../index.php">MYM</a>
+
         <?php include 'partials/navbar.php';?>
+
       </header>
 
       <!--mainsection-->
@@ -46,11 +48,16 @@
         <?php include_once 'partials/sign-up-form.php'; ?>
 
         <?php include 'partials/post-form.php';
+
         include 'likes/getLikesForPost.php';
+
+
+        //include 'likes/getLikesForPost.php';
+
         //include 'posts/postList.php';
         //include 'partials/getbutton.php';
         //include 'comments/getAllComments.php';
-        include 'partials/magnustest/listAllP.php';
+        //include 'partials/magnustest/listAllP.php';
         //include 'likes/insertLike.php';
         include 'partials/like-form.php';
 
@@ -60,8 +67,11 @@
       <?php include 'partials/footer.php'; ?>
 
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
-      <script src="scripts/main.js" type="text/javascript"></script>
-      <script src="scripts/comments.js" type="text/javascript"></script>
-      <script src="scripts/likes.js" type="text/javascript"></script>
+        <script src="scripts/main.js" type="text/javascript"></script>
+        <script src="scripts/comments.js" type="text/javascript"></script>
+        <script src="scripts/likes.js" type="text/javascript"></script>
+        <script src="scripts/register.js" type="text/javascript"></script>
+        <script src="scripts/login.js" type="text/javascript"></script>
+
     </body>
 </html>

@@ -25,9 +25,9 @@ class Login
     {
         $hashed = $this->userInfo['password'];
         if(password_verify($loginpass, $hashed)):
-            $_SESSION['status'] = true;
+            $_SESSION['passOK'] = true;
         else:
-            $_SESSION['status'] = false;
+            $_SESSION['passOK'] = false;
         endif;
     }
     
@@ -40,8 +40,12 @@ class Login
         return $_SESSION['admin'];
     }
     
-    public function save_to_session()
+    public function create_session($userArray, $username)
     {
-        
+        $_SESSION['username'] = (!empty($userArray['first'])) ? $userArray['first'] : $username;
+        $_SESSION['userId'] = $userArray['userId'];
+        $_SESSION['first'] = $userArray['first'];
+        $_SESSION['last'] = $userArray['last'];
+        $_SESSION['isAdmin'] = $userArray['isAdmin'];
     }
 }

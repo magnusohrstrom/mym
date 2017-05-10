@@ -7,5 +7,3 @@ $pdo = db::connection();
 
 $postList = new getPosts($pdo);
 $postList->getPosts();
-
-//header('Location: ../');

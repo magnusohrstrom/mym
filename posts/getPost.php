@@ -11,15 +11,18 @@ class getPosts
     public function getPosts()
     {
         $getPosts = $this->pdo->prepare(
-            "SELECT * FROM post");
+            "SELECT post.title, post.content, post.timeStamp, user.username, post.postId FROM post
+              INNER JOIN user on post.userId = user.userId ORDER BY postId DESC");
         $getPosts->execute();
         $post = $getPosts->fetchAll();
         foreach ($post as $row){
-            echo '<ul>';
-            echo '<li>' . $row['title'] . '</li>';
-            echo '<li>' . $row['content'] . '</li>';
-            echo '</ul>';
+            echo '<section class="post-section" id="'.$row['postId'].' col-sm-6 post-section">
+                  <article class="">
+                    <h3>'.$row['title'].'</h3>
+                    <p>'.$row['content'].'</p>
+                    <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>
+                  </article>';
+            echo '</section>';
         }
     }
 }
-

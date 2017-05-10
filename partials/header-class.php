@@ -1,7 +1,6 @@
-
 <?php
 include 'error.php';
-if($_SESSION['isAdmin']){
+if(isset($_SESSION['isAdmin']) && ($_SESSION['isAdmin']==true)){
       echo 'class="admin"';
       }
 else {
