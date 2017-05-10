@@ -1,8 +1,8 @@
 h1, h2, h3, h4, h5, label, .header-title {
-  font-family: 'Abel', sans-serif; }
+  font-family: "Abel", sans-serif; }
 
 p {
-  font-family: 'Playfair Display', serif; }
+  font-family: "Playfair Display", serif; }
 
 a {
   text-decoration: none; }
@@ -119,6 +119,37 @@ footer {
   border: 0.2em solid black; }
   .post-section article {
     height: auto; }
+
+#loader-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1; }
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  text-align: center;
+  color: #fff;
+  z-index: 2; }
+  .loader p {
+    height: 30rem;
+    color: #fff;
+    font-family: "Abel", sans-serif;
+    text-align: center;
+    font-size: 1.8rem;
+    z-index: 3; }
+
+#loader-bg, .loader {
+  display: none; }
 
 body, html {
   overflow-x: hidden; }

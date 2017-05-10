@@ -1,22 +1,47 @@
 $(function(){
-
     
-    $('#signup-form').submit(function(event){   
+    let name = $('#username'),
+        firstname = $('#first'),
+        lastname = $('#last'),
+        pass1 = $('#password'),
+        pass2 = $('#confirm_password'),
+        admincheck = $('input[name=isAdmin]:checked'),
+        message = $("#ajax-msg");
+    
+    //--- Ajax functions ----
+    let success = res =>{
+        console.log('success!: ');
+        if(res!==""){
+            message.html(res);
+            return $.Deferred().reject().promise();
+        };
+    };
+    
+    let loader =()=>{
+        let h = $(window).height();
+        $('#loader-bg,.loader, .loader-text').height(h).css('display','block');
+        setTimeout(function(){location.reload()}, 1500);
+    };
+    
+    let err = ()=>{console.log('error')};
+    //-----------------------
+    
+    $('#signup-form').on('submit', function(event){   
         event.preventDefault();
-        $("#ajax-msg").empty();
-            let username = $('#username').val(),
-                first = $('#first').val(),
-                last = $('#last').val(),
-                password = $('#password').val(),
-                password2 = $('#confirm_password').val(),
-                admin = $('input[name=isAdmin]:checked').val();
+        message.empty();
+            let username = name.val(),
+                first = firstname.val(),
+                last = lastname.val(),
+                password = pass1.val(),
+                password2 = pass2.val(),
+                admin = admincheck.val();
         
         if(username ==="" || password==="" || password2===""){
-            $('#ajax-msg').html('please fill in the form');
+            message.html('please fill in the form');
         } else if (password !== password2){
-            $('#ajax-msg').html('please confirm password again');
+            message.html('please confirm password again');
         } else {
-            let data = {
+            let regData = {
                         username: username,
                         first: first,
                         last: last,
@@ -27,30 +52,12 @@ $(function(){
             $.ajax({
                 url: 'login/register.php',
                 method: 'post',
-                data: data,
+                data: regData,
                 dataType: 'html'
             })
             .then(success)
-            .then(reload)
+            .then(loader)
             .fail(err);
-            
-            function success(res){
-                console.log('success!: ');
-                if(res!==""){
-                    $('#ajax-msg').html(res);
-                    return $.Deferred().reject().promise();
-                };
-            };
-            
-            function reload(){
-                console.log('reload!');
-                location.reload();
-            };
-            
-            function err(){
-                console.log('error')
-            };
-        }
-            
+        }    
     });
 });

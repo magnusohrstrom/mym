@@ -6,3 +6,6 @@
 |Framework / Style Guide |Photoshop|
 |Styling| Sass |
 |Library|Bootstrap|
+
+##### Source
+[Gif Loader Animation](http://www.ajaxload.info/)

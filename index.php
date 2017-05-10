@@ -23,6 +23,7 @@
         <section class="hero">
           <h1>MYM</h1>
           <h2>Social posting!</h2>
+            <?php include 'login/loader.php'; ?>
         <?php include_once 'partials/login-form.php'; ?>
 
         </section>
