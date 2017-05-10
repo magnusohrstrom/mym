@@ -4,7 +4,6 @@
     <!-- error message -->
     <div class="err-msg" id="err-msg"></div>
     
-    
     <label for="username">Username</label>
     <input type="text" id="login-username" name="username" value="">
     

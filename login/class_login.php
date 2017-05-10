@@ -47,5 +47,6 @@ class Login
         $_SESSION['first'] = $userArray['first'];
         $_SESSION['last'] = $userArray['last'];
         $_SESSION['isAdmin'] = $userArray['isAdmin'];
+        $_SESSION['login'] = true;
     }
 }
