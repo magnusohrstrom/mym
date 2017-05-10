@@ -41,6 +41,7 @@
         <?php include_once 'partials/sign-up-form.php'; ?>
 
         <?php include 'partials/post-form.php';
+
         //include 'likes/getLikesForPost.php';
         //include 'posts/postList.php';
         //include 'partials/getbutton.php';
