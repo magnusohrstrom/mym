@@ -1,5 +1,8 @@
 <?php 
 session_start();
+ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
 require 'class_register.php';
 
 //--- connection -------------
@@ -19,5 +22,6 @@ if($exist):
 else:
     $user->set_hash($password);
     $user->add_user($username);
-    $user->create_session($username);
+    $userinfo = $user->get_all_userinfo($username);
+    $user->create_session($userinfo, $username);
 endif;

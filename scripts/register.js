@@ -32,23 +32,23 @@ $(function(){
                 dataType: 'html'
             })
             .then(success)
-            .then(reload)
+            //.then(reload)
             .fail(err);
             
             function success(res){
                 console.log('success!: ');
                 if(res!==""){
                     $('#ajax-msg').html(res);
-                    return $.Deferred().reject().promise();
+                    //return $.Deferred().reject().promise();
                 };
             };
             
-            function reload(){
+            /*function reload(){
                 setTimeout(function(){
                     location.reload();
                 }, 50);
                 
-            };
+            };*/
             
             function err(){
                 console.log('error')

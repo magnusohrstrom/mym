@@ -2,24 +2,36 @@ $(function(){
 
     $('#login-form').submit(function(event){
         event.preventDefault();
-        $("#ajax-msg").empty();
-        
-        let formData = $('#username').serialize();
+        $("#err-msg").empty();
+        let name = $('#login-username').val(),
+            pass = $('#login-password').val();
 
+        //let formData = $(this).serialize();
+        let loginData = {
+            username: name,
+            password: pass
+        };
+        
         $.ajax({
             url: 'login/login.php',
             method: 'post',
-            data: formData
+            data: loginData
         })
         .then(success)
         .fail(err);
         
-        let success = res =>{
-            $("#ajax-msg").html(res);
-            console.log('success!: ' + formData);
+        function success(res){
+            console.log('success!');
+            if(res){
+                $('#err-msg').html(res);
+                console.log('check error message on page');
+                return $.Deferred().reject().promise();
+            };
         };
         
-        let err=()=>{console.log('error')};
+        function err(){
+            console.log('ERROR: Data cannot be sent');
+        }
         
     });
 });
