@@ -14,10 +14,17 @@ foreach ($hejsan as $row) {
             <h3>'.$row['title'].'</h3>
             <p>'.$row['content'].'</p>
           </article>';
+
   $likes_amount = new Like($pdo);
-  $list_of_likes = json_encode($likes_amount->getLikesForPost($postId));
- highlight_string(  $list_of_likes );
-  echo $list_of_likes['COUNT(*)'];
+  echo $total = $likes_amount->getLikesForPost($postId);
+
+
+
+
+
+
+
+
 
   include "partials/like-form.php";
 

@@ -59,19 +59,19 @@ class Like {
 
   public function deleteLike()
   {
-    
+
   }
 
   public function getLikesForPost($postId)
   {
     $st = $this->pdo->prepare(
-    'SELECT COUNT(*) FROM likes WHERE postId = :postId');
+    'SELECT COUNT(*) as total FROM likes WHERE postId = :postId');
     $st->execute([
       ':postId' => $postId
     ]);
     $list = $st->fetchAll();
 
-    return $list;
+    return $list[0]['total'];
   }
 }
 

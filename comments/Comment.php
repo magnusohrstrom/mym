@@ -11,16 +11,17 @@ class Comment{
 
   public function insertComment()
   {
-
+    session_start();
+    var_dump($_SESSION);
     $st = $this->pdo->prepare('INSERT INTO comments
-      (userId,content,postId)
+      (userId,content,postId,timeStamp)
       VALUES
-      (:userId,:content,:postId)');
+      (:userId,:content,:postId,now())');
 
     $st->execute([
-      ":userId" => 12,
+      ":userId" => $_SESSION['userId'],
       ":content" => $_POST["content"],
-      ":postId" => 1678
+      ":postId" => 2//$_POST["postId"]
     ]);
 
 

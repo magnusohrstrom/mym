@@ -111,9 +111,9 @@ footer {
   -moz-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  background: white;
   height: auto;
   width: 100%;
-  background: #9F9AA4;
   padding: 0;
   margin: 1em 0 0 0;
   border: 0.2em solid black; }
@@ -274,8 +274,8 @@ main {
 
 .like-form {
   position: relative;
-  height: 30em;
-  width: 30em; }
+  height: 3em;
+  width: 3em; }
   .like-form input {
     position: absolute;
     top: 50%;

@@ -1,9 +1,6 @@
 let mym = (function(){
 
-  return {
-
-
-    
+  return {  
     //Smooth scrolling
     smoothScrollAhref: () => {
       $('a[href*=\\#]').on('click', function(event){
