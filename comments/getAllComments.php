@@ -1,7 +1,7 @@
 <?php
 include 'Comment.php';
-include 'database/connection.php';
-$pdo = db::connection();
+
+
 $hej = new Comment($pdo);
 
 

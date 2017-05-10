@@ -1,6 +1,7 @@
 let commentsForm = document.getElementsByClassName('comment-form')[0];
 
 
+
 commentsForm.addEventListener('submit', function(event){
 
   //Prevent form from submitting
@@ -11,10 +12,11 @@ commentsForm.addEventListener('submit', function(event){
     method: 'POST',
     body: new FormData(this) //format input-fields
   })
-  .then(data => data.text())
-  .then(text => console.log(text));
+  .then(alert('Then!'));
 
 });
+
+
 
 
 
