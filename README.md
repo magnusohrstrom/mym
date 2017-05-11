@@ -1,5 +1,5 @@
 # Content Management System / FEND16
-## Team: MYM  Member: Yoko Andrae, Martin Clavin, Magnus Öhrström
+### Team: MYM  Member: Yoko Andrae, Martin Clavin, Magnus Öhrström
 
 | Area | Verktyg |
 |:-----:|:-----:|

@@ -1,10 +1,5 @@
 <?php 
 session_start();
-/*
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-*/
 //--Connection ------------------------------
 require '../database/connection.php';
 require '../database/pdo.php';
@@ -25,7 +20,7 @@ else:
     if($_SESSION['passOK']):
         $askDB->create_session($user, $username); #Success Login! 
     else:
-        echo 'Sorry, wrong password';
+        echo 'Please make sure your password';
     endif;
 endif;
 
