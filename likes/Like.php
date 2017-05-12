@@ -35,7 +35,8 @@ class Like {
           ':userId' => $userId
         ]);
 
-    return $st->rowCount() < 1 ? true : false;
+    $isLiked = $st->rowCount() < 1 ? true : false;
+    return json_encode($isLiked);
   }
 
   public function insertLike($userId, $postId)
@@ -57,8 +58,16 @@ class Like {
 
   }
 
-  public function deleteLike()
+  public function deleteLike($userId, $postId)
   {
+    $st = $this->pdo->prepare('
+    DELETE FROM likes WHERE postId = :postId
+    AND userId = :userId');
+    $st->execute([
+      ":userId" => $userId,
+      ":postId" => $postId
+    ]);
+
 
   }
 

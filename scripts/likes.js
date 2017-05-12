@@ -2,25 +2,31 @@ const like = (() => {
 
   return {
 
-    likeAndUnlike: () => {
-
+    likeAndUnlike: (post) => {
+      like.checkIfThisPostIsLiked(post);
+      //
     },
+
     updateLikeSumOnClick: function(post,response) {
       post.children[1].innerHTML = response;
     },
+
     checkIfThisPostIsLiked: (post) => {
-
-    },
-
-    insertLike:(post) => {
       let thisPost = post;
       $.ajax({
-        url:'likes/insertLike.php',
+        url:'likes/checkIfLiked.php',
         method: 'post',
         data: 'postId=' + thisPost.id,
         success:   function(resp){
-            like.updateLikeSumOnClick(thisPost, resp);
-            console.log(resp);
+            if(resp == 'true'){
+              like.insertDeleteLike(post,'likes/insertLike.php');
+              console.log('true');
+            }
+            else if(resp == 'false'){
+              console.log(resp);
+              like.insertDeleteLike(post,'likes/deleteLike.php');
+              console.log('false');
+            }
           },
         error: function(resp){
           console.log('An error has occured ' + resp);
@@ -28,17 +34,23 @@ const like = (() => {
       });
     },
 
-
-
-    changeToDeleteLikeButton: (post,that) => {
-
-      that.children[0].innerHTML = 'Unlike';
-
+    insertDeleteLike:(post,phpUrl) => {
+      let thisPost = post;
+      $.ajax({
+        url: phpUrl,
+        method: 'post',
+        data: 'postId=' + thisPost.id,
+        success:   function(resp){
+            like.updateLikeSumOnClick(thisPost, resp);
+          },
+        error: function(resp){
+          console.log('An error has occured ' + resp);
+        }
+      });
     },
 
-
-    deleteLike: () => {
-
+    changeToUnLikeButton: (likeForm) => {
+      likeForm.innerHTML == 'Unlike' ? likeForm.innerHTML = 'Like':likeForm.innerHTML = 'Unlike';
     },
 
     addEventListenerToLikeButton:function(){
@@ -46,23 +58,25 @@ const like = (() => {
       for (let i = 0; i < likeButtons.length; i++) {
         likeButtons[i].addEventListener('submit', function(event){
           event.preventDefault();
-
-          like.insertLike(this.parentNode);
-          //like.changeToDeleteLikeButton(this);
+          like.likeAndUnlike(this.parentNode)
+          like.changeToUnLikeButton(this.children[0]);
         });
       }
     },
 
+    /*
     addEventListenerToDeleteButton: function(){
       let deleteButtons = document.getElementsByClassName('delete-form');
 
       for (var i = 0; i < deleteButtons.length; i++) {
         deleteButtons[i].addEventListener('submit', function(event){
           event.preventDefault();
-          like.deleteLike();
+
         });
       }
-    },
+    },    */
+
+
     init:function(){
       like.addEventListenerToLikeButton();
     }
