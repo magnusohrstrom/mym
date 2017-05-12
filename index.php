@@ -54,7 +54,7 @@
 
         //include 'likes/getLikesForPost.php';
 
-        //include 'posts/postList.php';
+        include 'posts/postList.php';
         //include 'partials/getbutton.php';
         //include 'comments/getAllComments.php';
         //include 'partials/magnustest/listAllP.php';

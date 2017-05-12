@@ -34,12 +34,12 @@ class Like {
           ':postId' => $postId,
           ':userId' => $userId
         ]);
-        var_dump($st->rowCount());
+
     return $st->rowCount() < 1 ? true : false;
   }
 
   public function insertLike($userId, $postId)
-  {   var_dump(self::checkLike($userId,$postId));
+  { self::checkLike($userId,$postId);
     if(self::checkLike($userId,$postId)){
       $st = $this->pdo->prepare('INSERT INTO likes (userId, postId)
       VALUES (:userId,:postId)');
@@ -48,10 +48,10 @@ class Like {
         ":userId" => $userId,
         ":postId" => $postId
       ]);
-      var_dump('like');
+
     }
     else {
-      var_dump('already liked');
+
 
     }
 

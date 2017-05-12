@@ -16,8 +16,9 @@ foreach ($hejsan as $row) {
           </article>';
 
   $likes_amount = new Like($pdo);
-  echo $total = $likes_amount->getLikesForPost($postId);
 
+  echo $total = $likes_amount->getLikesForPost($postId);
+  //$total = $likes_amount->getLikesForPost($postId);
 
 
 

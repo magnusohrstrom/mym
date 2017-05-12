@@ -1,6 +1,34 @@
 let mym = (function(){
 
-  return {  
+  return {
+    gett:function(){
+
+      let likeButtons = document.getElementsByClassName('like-form');
+
+      var ajaxInsertLike = function() {
+        //let postId = this.parentNode.parentNode.id;
+        console.log(this);
+        $.ajax({
+          url:'likes/insertLike.php',
+          method: 'post',
+          data: 'postId=',//+postId,
+          success: function(resp){
+            console.log(resp);
+          }
+        }).done();
+      };
+      for (var i = 0; i < likeButtons.length; i++) {
+        likeButtons[i].addEventListener('submit', function(event) {
+          event.preventDefault();
+          console.log(this);
+          ajaxInsertLike();
+        });
+      }
+
+
+
+
+    },
     //Smooth scrolling
     smoothScrollAhref: () => {
       $('a[href*=\\#]').on('click', function(event){
@@ -34,6 +62,7 @@ let mym = (function(){
     init: () => {
       mym.detectScrollLength(200, 'nav-title', 'body', 'active');
       mym.detectScrollLength(2800, 'nav-title', 'body', 'active2');
+      //mym.gett();
     }
   }
 })();
