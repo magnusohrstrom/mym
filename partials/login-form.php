@@ -2,8 +2,7 @@
     <h3>Log in</h3>
     <h5><a href="#">Don't have an account?</a></h5>
     <!-- error message -->
-    <div class="err-msg" id="err-msg"></div>
-    
+    <div class="error-msg" id="err-msg"></div>
     
     <label for="username">Username</label>
     <input type="text" id="login-username" name="username" value="">

@@ -2,15 +2,16 @@ $grey:#9F9AA4;
 $siris: #C4055E;
 $darkgrey:#344055;
 $blue:#266DD3;
-
+$font-abel: 'Abel', sans-serif;
+$font-serif: 'Playfair Display', serif;
 
 //Typography
 h1,h2,h3,h4,h5, label, .header-title {
-font-family: 'Abel', sans-serif;
+font-family: $font-abel;
 }
 
 p{
-  font-family: 'Playfair Display', serif;
+  font-family: $font-serif;
 }
 a {
   text-decoration: none;

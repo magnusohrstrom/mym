@@ -1,14 +1,10 @@
 <?php 
 session_start();
-ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
-require 'class_register.php';
-
 //--- connection -------------
 require '../database/connection.php';
 require '../database/pdo.php';
 //-----------------------------
+require 'class_register.php';
 
 //save values from register.php
 $username = $_POST['username'];
