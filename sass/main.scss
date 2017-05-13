@@ -52,8 +52,6 @@ header {
     @include align-items(center);
     width: 50%;
   }*/
-
-
 }
 
 .nav {
@@ -118,20 +116,24 @@ main {
   font-size: 2em;
   color:white;
   &.active {
+    &.active2 {
+      color:white;
+    }
     color:black;
   }
 }
-
-.like-form {
-  position: relative;
-  height: 3em;
-  width: 3em;
-  & input {
-    position: absolute;
-    top:50%;
-    left:50%;
-    height: 1em;
-    width: 1em;
-    background: $blue;
+#nav-bar{
+  & a {
+    color:white;
+   }
+  &.active {
+    &.active2 {
+      & a {
+        color:white;
+      }
+    }
+    & a {
+      color:black;
+    }
   }
 }

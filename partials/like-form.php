@@ -1,7 +1,8 @@
 
 <form class="like-form" action="" method="POST">
-  <button type="submit" class="btn btn-secondary">
+  <button type="submit" class="">
     <?php
+      
       $like = 'Like';
       $unlike = 'Unlike';
       $likesToEcho = new Like($pdo);

@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, label, .header-title {
+h1, h2, h3, h4, h5, label, .header-title, .likeP {
   font-family: "Abel", sans-serif; }
 
 p {
@@ -41,9 +41,23 @@ form {
   form input {
     width: 100%; }
   form label {
-    font-size: 1em; }
+    font-size: 1em;
+    margin-bottom: -0.15em; }
   form button {
-    margin-top: 1em; }
+    margin: 2em;
+    margin-top: 1em;
+    border: none;
+    border: none;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-family: "Abel", sans-serif;
+    margin: 0.5em 0 0 0;
+    background: #266DD3; }
+    form button:nth-child(2) {
+      background: #266DD3; }
+    form button:hover {
+      cursor: pointer; }
 
 .error-msg {
   color: #C4055E; }
@@ -53,10 +67,31 @@ form {
   min-height: 15em; }
 
 .sign-up-form {
-  width: 100%; }
+  width: 100%;
+  visibility: hidden;
+  margin: -30em 0 0 0;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+  .sign-up-form.active {
+    visibility: visible;
+    margin: 0;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 1s; }
 
 .post-form {
   width: 100%; }
+  .post-form input:nth-child(7) {
+    height: 10em;
+    text-align: left; }
 
 .comment-form {
   width: 100%;
@@ -64,6 +99,40 @@ form {
   border: 0.2em solid black; }
   .comment-form input {
     width: 100%; }
+
+.like-form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  position: relative;
+  border: none;
+  padding: 0;
+  margin: 0; }
+  .like-form button {
+    border: none;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-family: "Abel", sans-serif;
+    font-size: 0.9em;
+    margin: 0; }
 
 footer {
   display: -webkit-box;
@@ -88,6 +157,7 @@ footer {
   left: 0;
   width: 100%;
   height: 2em;
+  margin-top: 1em;
   background: black; }
   footer a {
     color: white; }
@@ -103,18 +173,18 @@ footer {
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-align-items: space-between;
+  -moz-align-items: space-between;
+  -ms-align-items: space-between;
+  align-items: space-between;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   background: white;
   height: auto;
   width: 100%;
-  padding: 0;
+  padding: 1em;
   margin: 1em 0 0 0;
   border: 0.2em solid black; }
   .post-section article {
@@ -302,17 +372,14 @@ main {
   color: white; }
   #nav-title.active {
     color: black; }
+    #nav-title.active.active2 {
+      color: white; }
 
-.like-form {
-  position: relative;
-  height: 3em;
-  width: 3em; }
-  .like-form input {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 1em;
-    width: 1em;
-    background: #266DD3; }
+#nav-bar a {
+  color: white; }
+#nav-bar.active.active2 a {
+  color: white; }
+#nav-bar.active a {
+  color: black; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,10 +1,11 @@
+/*
 let commentsForm = document.getElementsByClassName('comment-form')[0];
 
 commentsForm.addEventListener('submit', function(event){
 
   //Prevent form from submitting
   event.preventDefault();
-  
+
   $.ajax({
     url:'comments/insertComment.php',
     method: 'post',
@@ -18,6 +19,8 @@ commentsForm.addEventListener('submit', function(event){
     console.log('succeeeeee');
   }
 });
+*/
+
 
 
 

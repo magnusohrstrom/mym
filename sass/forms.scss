@@ -1,4 +1,5 @@
 form {
+
   border:0.2em solid black;
   padding:1em;
   margin:2em 0 2em 0;
@@ -16,15 +17,37 @@ form {
   }
   & label {
     font-size: 1em;
-  //  margin-bottom:-2em;
+    margin-bottom:-0.15em;
   }
   & button {
+    margin:2em;
     margin-top: 1em;
+    border:none;
+    border:none;
+    top:50%;
+    left:50%;
+    color:white;
+    font-family: $font-abel;
+
+    //padding:0;
+    margin: 0.5em 0 0 0;
+    background: $blue;
+    &:nth-child(2){
+      background:$blue;
+    }
+    &:hover {
+      cursor:pointer;
+    }
+
   }
 }
 
+.login-button-container {
+
+}
+
 .error-msg {
-    color: $siris;
+  color: $siris;
 }
 
 .login-form {
@@ -34,10 +57,28 @@ form {
 
 .sign-up-form {
   width: 100%;
+  visibility: hidden;
+  margin:-30em 0 0 0;
+  background:white;
+  opacity: 0;
+  @include fade('hide');
+  @include transition(all 1s ease);
+  &.active {
+    visibility: visible;
+    margin:0;
+    @include fade('show');
+  }
 }
 
 .post-form {
   width: 100%;
+  & input {
+    &:nth-child(7){
+      height: 10em;
+      text-align: left;
+
+    }
+  }
 }
 
 .comment-form {
@@ -47,5 +88,29 @@ form {
   & input {
 
     width: 100%;
+  }
+}
+
+.like-form {
+  @include flexbox();
+  @include justify-content(flex-start);
+  @include align-items(flex-start);
+  @include flex-direction(row);
+  height: auto;
+  width: 100%;
+  position: relative;
+  border:none;
+  padding:0;
+  margin:0;
+
+  & button {
+    //position: absolute;
+    border:none;
+    top:50%;
+    left:50%;
+    color:white;
+    font-family: $font-abel;
+    font-size: 0.9em;
+    margin:0;
   }
 }

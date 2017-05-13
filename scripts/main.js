@@ -45,13 +45,17 @@ let mym = (function(){
         return false;
       }
     },
+
+    changeOnId: (leng, id, className) => {
+      st <= leng ? document.getElementById(id).classList.remove(className):
+        document.getElementById(id).classList.add(className);
+    },
     //Hides and shows header on scroll up/down.
-    detectScrollLength: (leng, id, tagName,className) => {
+    detectScrollLength: (leng, id1, id2, tagName,className) => {
       $(window).on('scroll', function() {
         st = $(this).scrollTop();
-
-        st <= leng ? document.getElementById(id).classList.remove(className):
-          document.getElementById(id).classList.add(className);
+        mym.changeOnId(leng,id1,className);
+        mym.changeOnId(leng,id2,className);
 
         st <= leng ? document.getElementsByTagName(tagName)[0].classList.remove(className):
           document.getElementsByTagName(tagName)[0].classList.add(className);
@@ -59,9 +63,19 @@ let mym = (function(){
         console.log(st);
       });
     },
+
+    showFormOnClick: (id,form) => {
+      document.getElementById(id).addEventListener('click',function(){
+      document.getElementById(form).classList.toggle('active');
+      });
+
+    },
     init: () => {
-      mym.detectScrollLength(200, 'nav-title', 'body', 'active');
-      mym.detectScrollLength(2800, 'nav-title', 'body', 'active2');
+      mym.detectScrollLength(200, 'nav-title','nav-bar','body', 'active');
+      mym.detectScrollLength(2800, 'nav-title','nav-bar' ,'body', 'active2');
+      mym.smoothScrollAhref();
+      mym.showFormOnClick('sign-up','sign-up-form');
+
       //mym.gett();
     }
   }
