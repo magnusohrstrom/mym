@@ -1,6 +1,8 @@
 <?php
+
 class getPosts
 {
+
     private $pdo;
 
     public function __construct($pdo)
@@ -16,13 +18,21 @@ class getPosts
         $getPosts->execute();
         $post = $getPosts->fetchAll();
         foreach ($post as $row){
-            echo '<section class="post-section" id="'.$row['postId'].' col-sm-6 post-section">
+            echo '<section class="col-sm-6 post-section" id="'.$row['postId'].'">
                   <article class="">
                     <h3>'.$row['title'].'</h3>
                     <p>'.$row['content'].'</p>
                     <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>
                   </article>';
+            include 'getSumOfLikesForPost.php';
+            include 'partials/like-form.php';
             echo '</section>';
+          /*
+include 'database/pdo.php';
+          $likesToEcho = new Like($pdo);
+          echo '<p>'.$likesToEcho->getLikesForPost($row['postId']).' has liked this post.</p></section>';*/
+
+
         }
     }
 }

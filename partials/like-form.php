@@ -1,3 +1,13 @@
-<form class="like-form" action="likes/insertLike.php" method="post">
-  <input type="submit" name="like-button">
+
+<form class="like-form" action="" method="POST">
+  <button type="submit" class="">
+    <?php
+      
+      $like = 'Like';
+      $unlike = 'Unlike';
+      $likesToEcho = new Like($pdo);
+      $likesToEcho->checkLike($_SESSION['userId'],$row['postId'])=='true'? $val = $like: $val = $unlike;
+      echo $val;
+     ?>
+  </button>
 </form>
