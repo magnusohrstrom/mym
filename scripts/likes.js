@@ -2,8 +2,8 @@ const like = (() => {
 
   return {
 
-    likeAndUnlike: (post) => {
-      like.checkIfThisPostIsLiked(post);
+    likeAndUnlike: (post,postP) => {
+      like.checkIfThisPostIsLiked(post,postP);
       //
     },
 
@@ -11,8 +11,9 @@ const like = (() => {
       post.children[1].innerHTML = response;
     },
 
-    checkIfThisPostIsLiked: (post) => {
+    checkIfThisPostIsLiked: (post,postP) => {
       let thisPost = post;
+      var that = postP;
       $.ajax({
         url:'likes/checkIfLiked.php',
         method: 'post',
@@ -21,11 +22,13 @@ const like = (() => {
             if(resp == 'true'){
               like.insertDeleteLike(post,'likes/insertLike.php');
               console.log('true');
+              like.changeToUnLikeButton(that,'Unlike');
             }
             else if(resp == 'false'){
               console.log(resp);
               like.insertDeleteLike(post,'likes/deleteLike.php');
               console.log('false');
+                like.changeToUnLikeButton(that,'Like');
             }
           },
         error: function(resp){
@@ -49,8 +52,8 @@ const like = (() => {
       });
     },
 
-    changeToUnLikeButton: (likeForm) => {
-      likeForm.innerHTML == 'Unlike' ? likeForm.innerHTML = 'Like':likeForm.innerHTML = 'Unlike';
+    changeToUnLikeButton: (likeButton, status) => {
+      likeButton.innerHTML = status;
     },
 
     addEventListenerToLikeButton:function(){
@@ -58,8 +61,8 @@ const like = (() => {
       for (let i = 0; i < likeButtons.length; i++) {
         likeButtons[i].addEventListener('submit', function(event){
           event.preventDefault();
-          like.likeAndUnlike(this.parentNode)
-          like.changeToUnLikeButton(this.children[0]);
+          like.likeAndUnlike(this.parentNode,this.children[0]);
+          //like.changeToUnLikeButton(this.children[0]);
         });
       }
     },
