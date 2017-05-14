@@ -27,9 +27,9 @@
         <section class="hero">
           <h1>MYM</h1>
           <h2>Social posting!</h2>
-          <?php include_once 'partials/sign-up-form.php'; ?>
+          <?php include 'partials/sign-up-form.php'; ?>
           <?php include 'login/loader.php'; ?>
-          <?php include_once 'partials/login-form.php'; ?>
+          <?php include 'partials/login-form.php'; ?>
 
         </section>
         <section class="row post">

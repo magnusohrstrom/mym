@@ -13,6 +13,6 @@
 
 <?php else: ?>
     <a class="" id="sign-up" href="#sign-up-form">Sign up</a>
-    <a class="" href="#login">Login</a>
+    <a class="" href="#login-form">Login</a>
 <?php endif; ?>
 </nav>

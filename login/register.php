@@ -6,7 +6,7 @@ require '../database/pdo.php';
 //-----------------------------
 require 'class_register.php';
 
-//save values from register.php
+//save values from register.js
 $username = $_POST['username'];
 $password = $_POST['password'];
 
