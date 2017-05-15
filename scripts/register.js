@@ -5,7 +5,6 @@ $(function(){
         lastname = $('#last'),
         pass1 = $('#password'),
         pass2 = $('#confirm_password'),
-        admincheck = $('input[name=isAdmin]:checked'),
         message = $('#ajax-msg');
     
     //--- Ajax functions ----
@@ -29,7 +28,8 @@ $(function(){
     $('#sign-up-form').on('submit', function(event){   
         event.preventDefault();
         message.empty();
-            let username = name.val(),
+            let admincheck = $('input[name="isAdmin"]:checked'),
+                username = name.val(),
                 first = firstname.val(),
                 last = lastname.val(),
                 password = pass1.val(),
@@ -37,7 +37,7 @@ $(function(){
                 admin = admincheck.val();
         
         if(username ==="" || password==="" || password2===""){
-            message.html('please fill in the form');
+            message.html('please fill in the form' + admin);
         } else if (password !== password2){
             message.html('please confirm password again');
         } else {
