@@ -12,4 +12,6 @@ $pdo = db::connection();
 $newPost = new newPost($pdo);
 $newPost->insertPost();
 
+echo "123";
+
 header('Location: ../');

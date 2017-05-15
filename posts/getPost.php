@@ -31,8 +31,6 @@ class getPosts
 include 'database/pdo.php';
           $likesToEcho = new Like($pdo);
           echo '<p>'.$likesToEcho->getLikesForPost($row['postId']).' has liked this post.</p></section>';*/
-
-
         }
     }
 }
