@@ -21,8 +21,8 @@ class getPosts
                     <h3>'.$row['title'].'</h3>
                     <p>'.$row['content'].'</p>
                     <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>
-                  </article>';
-            echo '</section>';
+                  </article>
+                  </section>';
         }
     }
 }

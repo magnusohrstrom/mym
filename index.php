@@ -51,5 +51,6 @@
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
       <script src="scripts/main.js" type="text/javascript"></script>
       <script src="scripts/comments.js" type="text/javascript"></script>
+      <script src="scripts/post.js" type="text/javascript"></script>
     </body>
 </html>
