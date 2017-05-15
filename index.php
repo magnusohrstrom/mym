@@ -62,6 +62,7 @@
         <script src="scripts/likes.js" type="text/javascript"></script>
         <script src="scripts/register.js" type="text/javascript"></script>
         <script src="scripts/login.js" type="text/javascript"></script>
+        <script src="scripts/post.js" type="text/javascript"></script>
 
     </body>
 </html>
