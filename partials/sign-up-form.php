@@ -1,52 +1,31 @@
-<form id="reg" class="sign-up-form col-sm-6" action="../mym/login/register.php" method="post">
+<form id="sign-up-form" class="sign-up-form col-sm-4" method="post">
     <h3>Sign up</h3>
     <h5><a href="#">Already a user?</a></h5>
-    
-    <!-- warning for empty form -->
-    <?php if(isset($_SESSION['reg_error'])): ?>
-    <span class="error-msg">
-        <?= $_SESSION['reg_error']; ?>
-        <?php unset($_SESSION['reg_error']); ?>
-    </span>            
-    <?php endif; ?>
+
+    <div id="ajax-msg" class="error-msg"></div>
 
     <label for="first">First Name</label>
-    <input type="text" id="first" name="first-name" value="">
+    <input type="text" id="first" name="first-name">
     <label for="last">Last Name</label>
-    <input type="text" id="last" name="last-name" value="">
+    <input type="text" id="last" name="last-name">
 
     <label for="username">Username</label>
-    <input type="text" name="username" value="">
-    
-    <!-- message for exiting username -->
-    <?php if(isset($_SESSION['duplication'])): ?>
-    <span class="error-msg">
-        <?= $_SESSION['duplication']; ?>
-        <?php unset($_SESSION['duplication']); ?>
-    </span>            
-    <?php endif; ?>
-    
+    <input type="text" id="username" name="username">
+
+
     <label for="password">Password</label>
-    <input type="password" id="password" name="password" value="">
+    <input type="password" id="password" name="password">
     <label for="confirm">Confirm password</label>
-    <input type="password" id="confirm" name="confirm_password" value="">
-    
-    <!-- message for unmatch password -->
-    <?php if(isset($_SESSION['confirm'])): ?>
-    <span class="error-msg">
-        <?= $_SESSION['confirm']; ?>
-        <?php unset($_SESSION['confirm']); ?>
-    </span>            
-    <?php endif; ?>
-    
+    <input type="password" id="confirm_password" name="confirm_password">
+
     <label>Choose User Type</label>
     <label for="normal">Normal User</label>
-    <input type="radio" name="isAdmin" value="false" id="normal" checked="checked">
+    <input type="radio" id="normal" name="isAdmin" value="0" checked="checked">
     <label for="admin">Admin</label>
-    <input type="radio" name="isAdmin" value="true" id="admin">
-    
+    <input type="radio" id="admin" name="isAdmin" value="1">
+
   <div class="btn-group">
-    <button type="submit" class="btn btn-secondary" name="button">Sign up</button>
-    <button type="reset" class="btn btn-default">Cancel</button>
+    <button type="submit" class="">Sign up</button>
+    <button type="reset" class="">Cancel</button>
   </div>
 </form>

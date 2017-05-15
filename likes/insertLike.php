@@ -1,12 +1,11 @@
 <?php
-include 'database/connection.php';
-include 'Like.php';
-$pdo = db::connection();
+session_start();
+include '../likes/Like.php';
+include '../database/connection.php';
+include '../database/pdo.php';
 
-$like = new Like($pdo);
+$like2 =  new Like($pdo);
 
-$like->getAllLikes();
-$like->insertLike();
-$like->getAllLikes();
-
-header('Location: ../');
+$like2->insertLike($_SESSION['userId'],$_POST['postId']);
+$total = $like2->getLikesForPost($_POST['postId']);
+echo $total.' Likes';

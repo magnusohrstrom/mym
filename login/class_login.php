@@ -25,12 +25,13 @@ class Login
     {
         $hashed = $this->userInfo['password'];
         if(password_verify($loginpass, $hashed)):
-            $_SESSION['status'] = true;
+            $_SESSION['passOK'] = true;
         else:
-            $_SESSION['status'] = false;
+            $_SESSION['passOK'] = false;
         endif;
     }
     
+    /*
     public function check_admin($name)
     {
         $sql = "SELECT isAdmin FROM user WHERE username = :username";
@@ -38,5 +39,16 @@ class Login
         $st->execute([':username' => $name]);
         $_SESSION['admin'] = $st->fetch();
         return $_SESSION['admin'];
+    }
+    */
+    
+    public function create_session($userArray, $username)
+    {
+        $_SESSION['username'] = (!empty($userArray['first'])) ? $userArray['first'] : $username;
+        $_SESSION['userId'] = $userArray['userId'];
+        $_SESSION['first'] = $userArray['first'];
+        $_SESSION['last'] = $userArray['last'];
+        $_SESSION['isAdmin'] = $userArray['isAdmin'];
+        $_SESSION['login'] = true;
     }
 }

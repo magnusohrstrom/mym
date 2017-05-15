@@ -1,41 +1,27 @@
 <?php 
 session_start();
-require 'class_login.php';
 //--Connection ------------------------------
 require '../database/connection.php';
 require '../database/pdo.php';
 //--------------------------------------------
+require 'class_login.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 
-if($username && $password):  #to make sure both are filled in
-    $askDB = new Login($pdo);
-    $user = $askDB->get_info($username);
+$askDB = new Login($pdo);
+$user = $askDB->get_info($username);
 
-    if(empty($user)):
-        $_SESSION['name_error'] ='username not found';
-    header('Location: ../index.php#login');
-    else:
-        $askDB->verify($password);  #Calling the "verify" function
-        
-        if($_SESSION['status']):
-            (!empty($user['first'])) ? 
-                $_SESSION['username'] = $user['first'] : 
-                $_SESSION['username'] = $username;
-                $_SESSION['userId']   = $user['userId'];
-            header('Location: ../index.php');
-        else:
-            $_SESSION['pass_error'] = 'Sorry, wrong password';
-            header('Location: ../index.php#login');
-        endif;
-
-    endif;    
-
+if(empty($user)):
+    echo 'Username not found';
 else:
-    $_SESSION['input_error'] = 'Please fill in the form';
-    header('Location: ../index.php#login');
+    $askDB->verify($password);
+    if($_SESSION['passOK']):
+        $askDB->create_session($user, $username); #Success Login! 
+    else:
+        echo 'Please make sure your password';
+    endif;
 endif;
 
 
