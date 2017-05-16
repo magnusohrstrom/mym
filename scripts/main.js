@@ -64,14 +64,35 @@ let mym = (function(){
       });
     },
 
-    showFormOnClick: (id,form) => {
-      document.getElementById(id).addEventListener('click',function(){
-      document.getElementById(form).classList.toggle('active');
+    detectScrollOnMultipleElem: (leng, className, cl) => {
+
+      $(window).on('scroll', function() {
+        st = $(this).scrollTop();
+        let arr = document.getElementsByClassName(className);
+        if(st <= leng){
+          for (var i = 0; i < arr.length; i++) {
+            arr[i].classList.remove(cl);
+          }
+        }
+        else{
+          for (var i = 0; i < arr.length; i++) {
+            arr[i].classList.add(cl);
+          }
+        }
       });
+    },
+
+    showFormOnClick: (id,form) => {
+
+      if(document.getElementById(id)){document.getElementById(id).addEventListener('click',function(){
+        document.getElementById(form).classList.toggle('active');
+      });}
 
     },
     init: () => {
+
       mym.detectScrollLength(200, 'nav-title','nav-bar','body', 'active');
+      mym.detectScrollOnMultipleElem(2800,'post-section','active');
       mym.detectScrollLength(2800, 'nav-title','nav-bar' ,'body', 'active2');
       mym.smoothScrollAhref();
       mym.showFormOnClick('sign-up','sign-up-form');
