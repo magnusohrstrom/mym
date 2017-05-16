@@ -31,6 +31,7 @@ class Login
         endif;
     }
     
+    /*
     public function check_admin($name)
     {
         $sql = "SELECT isAdmin FROM user WHERE username = :username";
@@ -39,6 +40,7 @@ class Login
         $_SESSION['admin'] = $st->fetch();
         return $_SESSION['admin'];
     }
+    */
     
     public function create_session($userArray, $username)
     {
