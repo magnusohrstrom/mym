@@ -6,8 +6,8 @@ p {
 
 a {
   text-decoration: none; }
-  a:hover {
-    text-decoration: none; }
+a:hover {
+  text-decoration: none; }
 
 /*------------- Breakpoints mixin*/
 /*------------- Flexbox mixins*/
@@ -38,26 +38,26 @@ form {
   -ms-align-items: flex-start;
   align-items: flex-start;
   font-size: 1.2em; }
-  form input {
-    width: 100%; }
-  form label {
-    font-size: 1em;
-    margin-bottom: -0.15em; }
-  form button {
-    margin: 2em;
-    margin-top: 1em;
-    border: none;
-    border: none;
-    top: 50%;
-    left: 50%;
-    color: white;
-    font-family: "Abel", sans-serif;
-    margin: 0.5em 0 0 0;
-    background: #266DD3; }
-    form button:nth-child(2) {
-      background: #266DD3; }
-    form button:hover {
-      cursor: pointer; }
+form input {
+  width: 100%; }
+form label {
+  font-size: 1em;
+  margin-bottom: -0.15em; }
+form button {
+  margin: 2em;
+  margin-top: 1em;
+  border: none;
+  border: none;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-family: "Abel", sans-serif;
+  margin: 0.5em 0 0 0;
+  background: #266DD3; }
+form button:nth-child(2) {
+  background: #266DD3; }
+form button:hover {
+  cursor: pointer; }
 
 .error-msg {
   color: #C4055E; }
@@ -80,25 +80,25 @@ form {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease; }
-  .sign-up-form.active {
-    visibility: visible;
-    margin: 0;
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 1s, opacity 1s; }
+.sign-up-form.active {
+  visibility: visible;
+  margin: 0;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 1s, opacity 1s; }
 
 .post-form {
   width: 100%; }
-  .post-form input:nth-child(7) {
-    height: 10em;
-    text-align: left; }
+.post-form input:nth-child(7) {
+  height: 10em;
+  text-align: left; }
 
 .comment-form {
   width: 100%;
   height: 20em;
   border: 0.2em solid black; }
-  .comment-form input {
-    width: 100%; }
+.comment-form input {
+  width: 100%; }
 
 .like-form {
   display: -webkit-box;
@@ -125,14 +125,14 @@ form {
   border: none;
   padding: 0;
   margin: 0; }
-  .like-form button {
-    border: none;
-    top: 50%;
-    left: 50%;
-    color: white;
-    font-family: "Abel", sans-serif;
-    font-size: 0.9em;
-    margin: 0; }
+.like-form button {
+  border: none;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-family: "Abel", sans-serif;
+  font-size: 0.9em;
+  margin: 0; }
 
 footer {
   display: -webkit-box;
@@ -159,8 +159,8 @@ footer {
   height: 2em;
   margin-top: 1em;
   background: black; }
-  footer a {
-    color: white; }
+footer a {
+  color: white; }
 
 .post-section {
   display: -webkit-box;
@@ -187,8 +187,8 @@ footer {
   padding: 1em;
   margin: 1em 0 0 0;
   border: 0.2em solid black; }
-  .post-section article {
-    height: auto; }
+.post-section article {
+  height: auto; }
 
 #loader-bg {
   position: fixed;
@@ -210,13 +210,13 @@ footer {
   text-align: center;
   color: #fff;
   z-index: 2; }
-  .loader p {
-    height: 30rem;
-    color: #fff;
-    font-family: "Abel", sans-serif;
-    text-align: center;
-    font-size: 1.8rem;
-    z-index: 3; }
+.loader p {
+  height: 30rem;
+  color: #fff;
+  font-family: "Abel", sans-serif;
+  text-align: center;
+  font-size: 1.8rem;
+  z-index: 3; }
 
 #loader-bg, .loader {
   display: none; }
@@ -234,10 +234,10 @@ body {
   -ms-transition: all 0.7s ease;
   -o-transition: all 0.7s ease;
   transition: all 0.7s ease; }
-  body.active {
-    background: white; }
-  body.active.active2 {
-    background: #266DD3; }
+body.active {
+  background: white; }
+body.active.active2 {
+  background: #266DD3; }
 
 header {
   position: fixed;
@@ -272,12 +272,12 @@ header {
     @include align-items(center);
     width: 50%;
   }*/ }
-  header a {
-    font-size: 1em;
-    color: white;
-    margin: 0 2em 0 2em; }
-  header.admin {
-    background: #266DD3; }
+header a {
+  font-size: 1em;
+  color: white;
+  margin: 0 2em 0 2em; }
+header.admin {
+  background: #266DD3; }
 
 .nav {
   z-index: 1000;
@@ -302,12 +302,12 @@ header {
   -moz-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row; }
-  .nav a {
-    color: black; }
-  .nav button {
-    background: white; }
-  .nav.admin-nav {
-    background: #266DD3; }
+.nav a {
+  color: black; }
+.nav button {
+  background: white; }
+.nav.admin-nav {
+  background: #266DD3; }
 
 .nav-brand.nav-title a {
   color: #C4055E; }
@@ -356,24 +356,24 @@ main {
   flex-direction: column;
   margin: 0em 2em 0;
   width: 100vw; }
+.hero h1 {
+  font-size: 10em;
+  color: white;
+  margin: 1.5em 0 0 0; }
+@media (max-width: 900px) {
   .hero h1 {
-    font-size: 10em;
-    color: white;
-    margin: 1.5em 0 0 0; }
-    @media (max-width: 900px) {
-      .hero h1 {
-        font-size: 7em;
-        margin: 2em 0 0 0; } }
-  .hero h2 {
-    color: #9F9AA4; }
+    font-size: 7em;
+    margin: 2em 0 0 0; } }
+.hero h2 {
+  color: #9F9AA4; }
 
 #nav-title {
   font-size: 2em;
   color: white; }
-  #nav-title.active {
-    color: black; }
-    #nav-title.active.active2 {
-      color: white; }
+#nav-title.active {
+  color: black; }
+#nav-title.active.active2 {
+  color: white; }
 
 #nav-bar a {
   color: white; }
