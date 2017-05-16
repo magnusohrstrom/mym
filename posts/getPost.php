@@ -2,7 +2,7 @@
 
 class getPosts
 {
-
+    
     private $pdo;
 
     public function __construct($pdo)
@@ -21,7 +21,8 @@ class getPosts
             echo '<section class="col-sm-6 post-section" id="'.$row['postId'].'">
                   <article class="">';
             if(isset($_SESSION['username'])){
-                if ($_SESSION['isAdmin'] == true || $_SESSION['isAdmin'] == 1)
+                if ($_SESSION['isAdmin'] == false || $_SESSION['isAdmin'] == 0
+                    || $_SESSION['userId'] = post.userId)
                 {
                     echo '<button id="deletePost" type="button" value="delete">DELETE</button>';
                 }

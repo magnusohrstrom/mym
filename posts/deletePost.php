@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../database/connection.php';
-include 'deleteClass.php';
+//include 'deleteClass.php';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -9,7 +9,10 @@ error_reporting(E_ALL);
 
 $pdo = db::connection();
 
-$post = new post($pdo);
-$post->delete();
+$sql = "DELETE FROM post WHERE postId = ";
 
-header('Location: ../');
+$pdo->exec($sql);
+//$post = new postToDelete($pdo);
+//$post->delete();
+
+//header('Location: ../');
