@@ -11,7 +11,7 @@ class getPosts
     }
 
     public function getPosts()
-    {
+    { 
         $getPosts = $this->pdo->prepare(
             "SELECT post.title, post.content, post.timeStamp, user.username, post.postId FROM post
               INNER JOIN user on post.userId = user.userId ORDER BY postId DESC");
