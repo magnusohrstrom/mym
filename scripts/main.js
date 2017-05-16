@@ -83,9 +83,10 @@ let mym = (function(){
     },
 
     showFormOnClick: (id,form) => {
-      document.getElementById(id).addEventListener('click',function(){
-      document.getElementById(form).classList.toggle('active');
-      });
+
+      if(document.getElementById(id)){document.getElementById(id).addEventListener('click',function(){
+        document.getElementById(form).classList.toggle('active');
+      });}
 
     },
     init: () => {
