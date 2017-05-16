@@ -8,6 +8,6 @@
   <label for="post">Post</label>
   <input type="text" name="content" value="" id="content">
   <div class="btn-group">
-    <button type="submit" class="" name="button">Add post</button>
+    <button type="submit" class="btn btn-secondary" name="button">Add post</button>
   </div>
 </form>

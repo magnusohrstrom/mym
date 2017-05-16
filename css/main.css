@@ -187,8 +187,10 @@ footer a {
   padding: 1em;
   margin: 1em 0 0 0;
   border: 0.2em solid black; }
-.post-section article {
-  height: auto; }
+  .post-section.active {
+    border: none; }
+  .post-section article {
+    height: auto; }
 
 #loader-bg {
   position: fixed;
