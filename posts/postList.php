@@ -8,3 +8,4 @@
 
   $postList = new getPosts($pdo);
   $postList->getPosts();
+

@@ -7,7 +7,7 @@ let mym = (function(){
 
       var ajaxInsertLike = function() {
         //let postId = this.parentNode.parentNode.id;
-        console.log(this);
+        //console.log(this);
         $.ajax({
           url:'likes/insertLike.php',
           method: 'post',
@@ -20,7 +20,7 @@ let mym = (function(){
       for (var i = 0; i < likeButtons.length; i++) {
         likeButtons[i].addEventListener('submit', function(event) {
           event.preventDefault();
-          console.log(this);
+          //console.log(this);
           ajaxInsertLike();
         });
       }
@@ -60,7 +60,7 @@ let mym = (function(){
         st <= leng ? document.getElementsByTagName(tagName)[0].classList.remove(className):
           document.getElementsByTagName(tagName)[0].classList.add(className);
 
-        console.log(st);
+        //console.log(st);
       });
     },
 

@@ -1,12 +1,12 @@
 <?php
-  session_start();
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
-  include 'database/connection.php';
-  include 'database/pdo.php';
-  include 'likes/Like.php';
-  include 'comments/Comment.php';
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+include 'database/connection.php';
+include 'database/pdo.php';
+include 'likes/Like.php';
+include 'comments/Comment.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,8 +55,9 @@
 
       </main>
       <?php include 'partials/footer.php'; ?>
-
-      <script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+        <script src="scripts/deletePost.js"></script>
         <script src="scripts/main.js" type="text/javascript"></script>
         <script src="scripts/comments.js" type="text/javascript"></script>
         <script src="scripts/likes.js" type="text/javascript"></script>

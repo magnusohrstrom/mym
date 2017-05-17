@@ -1,16 +1,15 @@
 <?php
 session_start();
-
 class Login
 {
     private $pdo;
     private $userInfo;
-    
+
     public function __construct($pdo)
     {
         $this->pdo = $pdo;
     }
-    
+
     #search the user in DB
     public function get_info($name)
     {
@@ -20,7 +19,7 @@ class Login
         $this->userInfo = $st->fetch();
         return $this->userInfo;
     }
-    
+
     public function verify($loginpass)
     {
         $hashed = $this->userInfo['password'];
@@ -30,7 +29,7 @@ class Login
             $_SESSION['passOK'] = false;
         endif;
     }
-    
+
     /*
     public function check_admin($name)
     {
@@ -41,7 +40,7 @@ class Login
         return $_SESSION['admin'];
     }
     */
-    
+
     public function create_session($userArray, $username)
     {
         $_SESSION['username'] = (!empty($userArray['first'])) ? $userArray['first'] : $username;
