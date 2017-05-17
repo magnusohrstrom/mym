@@ -21,7 +21,7 @@ class getPosts
             echo '<section class="col-sm-6 post-section" id="'.$row['postId'].'">
                   <article class="">';
             if(isset($_SESSION['username'])){
-                if ($_SESSION['username'] == $row['username'] || $_$_SESSION['isAdmin'] == true ||
+                if ($_SESSION['username'] == $row['username'] || $_SESSION['isAdmin'] == true ||
                     $_SESSION['isAdmin'] == 1)
                 {
                     echo '<button id="deletePost" type="button" value="delete">DELETE</button>';
