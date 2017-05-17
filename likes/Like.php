@@ -10,21 +10,6 @@ class Like {
     $this->pdo = $pdo;
   }
 
-
-  /*
-  public function insertLike()
-  {
-
-
-  $st = $this->pdo->prepare('INSERT INTO likes (userId, postId)
-      VALUES (:userId,:postId)');
-
-    $st->execute([
-      ":userId" => $this->userId,
-      ":postId" => $this->postId
-    ]);
-  }  */
-
   public function checkLike($userId,$postId)
   {
     $st = $this->pdo->prepare(
