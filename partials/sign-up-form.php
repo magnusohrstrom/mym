@@ -1,4 +1,4 @@
-<form id="sign-up-form" class="sign-up-form col-sm-4" method="post">
+<form id="sign-up-form" class="sign-up-form col-sm-6" method="post">
     <h3>Sign up</h3>
     <h5><a href="#">Already a user?</a></h5>
 
