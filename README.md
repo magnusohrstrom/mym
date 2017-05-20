@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Simple Content Management System / FEND16</h1>
+<h1>Simple Content Management System / Group Work</h1>
 <h3>FEND16 : PHP, MySQL, CMS</h3>
 <p align="center"><img src="images/favicon.png" alt="team logo"></p> 
 <h4>Magnus Öhrström, Yoko Andrae, Martin Clavin</h4>
@@ -9,7 +9,7 @@
 Uppdraget är att skapa en blogg applikation skriven i PHP och MySQL som fungerar som ett mindre CMS där man kan lägga till, redigera och ta bort innehåll. Den ska även möjliggöra rösta eller gilla innehållet.
 
 ### Arbetsflöde
-Vi satte igång detta uppdrag med namngivning till vår grupp. Vi sedan strukturerade vår databas (bestämde vilka tabeller och kolumner krävdes), och därefter diskterade vi om tema färger och typsnitt. För att köra igång kodning, delade vi upp uppdraget till tre olika delar: **1) Signup/login system, 2) blogg inläggnings system,** samt **3) like/comments system**. Magnus byggde ett skellet (med CSS styles) av webbsidan, och sedan lade vi in var sin kod till detta skellet.  
+Vi satte igång detta uppdrag med namngivning till vår grupp/projekt. Vi strukturerade sedan vår databas (bestämde vilka tabeller och kolumner krävdes), och därefter diskterade vi om tema färger och typsnitt. För att köra igång kodning, delade vi upp uppdraget till tre olika delar: **1) Signup/login system, 2) blogg inläggnings system,** samt **3) like/comments system**. Magnus byggde ett skellet (med CSS styles) av webbsidan, och sedan lade vi in var sin kod till detta skellet.  
   
 Flesta våra kommunikationer skedde på Slack, samt vi samlade in i klassrummet när det var möjligt. Vi körde dessutom scrum-möte ett par gånger i veckan. Vi hanterade versioner och hämtade filer av varandra genom GitHub.  
   
@@ -31,10 +31,10 @@ Vår CMS applikation har en tydlig struktur och därmed ett enkelt utseende. Den
 **Sign-up systemet** låter användare att skriva in med obligatoriska username och låsenord, och firstname och lastname är valfria. När man kommit in, headern visar antingen firstname eller username (beroende på att använderen har skrivit sitt firstname fält.)  så att användaren vet att hen är in på sidan. Javascript värderar om alla obligatoriska fält är fyllda och låsenord stämmer med andra vid sign-up. När det godkänner så skickar scriptet datan till PHP. PHP värderar då användarnamnet inte finns i databasen. Vid login systemet, värderar Javascript om alla fält är fyllda och skickar vidare till PHP när dessa är godkännda, och då PHP värderar användarnamn och låsenord stämmer samt retunerar boolean för admin rättigheten.  
   
 **Post systemet**  
-
+<p style="color:red">Martin skriver</p>
   
 **Like systemet**  
-
+<p style="color:red">Martin skriver</p>
   
 ### Style Guide
 #### Tema-färger
