@@ -31,10 +31,10 @@ Vår CMS applikation har en tydlig struktur och därmed ett enkelt utseende. Den
 **Sign-up systemet** låter användare att skriva in med obligatoriska username och låsenord, och firstname och lastname är valfria. När man kommit in, headern visar antingen firstname eller username (beroende på att använderen har skrivit sitt firstname fält.)  så att användaren vet att hen är in på sidan. Javascript värderar om alla obligatoriska fält är fyllda och låsenord stämmer med andra vid sign-up. När det godkänner så skickar scriptet datan till PHP. PHP värderar då användarnamnet inte finns i databasen. Vid login systemet, värderar Javascript om alla fält är fyllda och skickar vidare till PHP när dessa är godkännda, och då PHP värderar användarnamn och låsenord stämmer samt retunerar boolean för admin rättigheten.  
   
 **Post systemet**  
-<p style="color:red">Martin skriver</p>
+<font color="OrangeRed">Martin skriver</font>
   
 **Like systemet**  
-<p style="color:red">Martin skriver</p>
+<font color="OrangeRed">Magnus skriver</font>
   
 ### Style Guide
 #### Tema-färger
