@@ -4,10 +4,7 @@ if (isset($_SESSION['username'])!==true) {
 
   echo '<form id="login-form" class="login-form col-sm-6" method="post">
           <h3>Login</h3>
-<<<<<<< HEAD
-=======
-        
->>>>>>> master
+
           <!-- error message -->
           <div class="error-msg" id="err-msg"></div>
 
