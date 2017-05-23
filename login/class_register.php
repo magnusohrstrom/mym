@@ -44,7 +44,7 @@ class Register
 
     public function create_session($userArray, $name){
         $_SESSION['login'] = true;
-        $_SESSION['username'] = ($_POST['first']) ? $_POST['first'] : $name;
+        $_SESSION['username'] = $name;
         $_SESSION['isAdmin'] = $_POST['isAdmin'];
         $_SESSION['userId'] = $userArray['userId'];
     }
