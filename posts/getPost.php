@@ -21,7 +21,7 @@ class getPosts
 
             echo '<section class="col-sm-6 post-section" id="'.$row['postId'].'">
                   <article class="">';
-            echo    '<h3>'.$row['title'].'</h3>
+      
                     echo '<h3>'.$row['title'].'</h3>
                     <p>'.$row['content'].'</p>
                     <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>';

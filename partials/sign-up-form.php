@@ -17,7 +17,6 @@
     <label for="confirm">Confirm password</label>
     <input type="password" id="confirm_password" name="confirm_password">
 
-    <label>Choose User Type</label>
     <label for="normal">Normal User</label>
     <input type="radio" id="normal" name="isAdmin" value="0" checked>
     <label for="admin">Admin</label>
