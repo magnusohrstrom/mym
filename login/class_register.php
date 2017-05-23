@@ -39,7 +39,6 @@ class Register
         $sql = "SELECT * FROM user WHERE username=:user";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([":user"=>$name]);
-        return $stmt->fetch();
     }
     
     
