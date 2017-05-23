@@ -13,7 +13,7 @@ $(function(){
 
     let loader = () =>{
         let h = $(window).height();
-        $('#loader-bg,.loader, .loader-text').height(h).css('display','block');
+        $('.login, .loginLoader, .loader-text').height(h).css('display','block');
         setTimeout(function(){
           location.reload();
           console.log('hej!');
