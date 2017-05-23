@@ -35,9 +35,9 @@ $(function(){
                 password = pass1.val(),
                 password2 = pass2.val(),
                 admin = admincheck.val();
-        
+
         if(username ==="" || password==="" || password2===""){
-            message.html('please fill in the form' + admin);
+            message.html('please fill in the form');
         } else if (password !== password2){
             message.html('please confirm password again');
         } else {

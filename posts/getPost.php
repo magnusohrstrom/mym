@@ -20,16 +20,16 @@ class getPosts
         foreach ($post as $row){
             echo '<section class="col-sm-6 post-section" id="'.$row['postId'].'">
                   <article class="">';
-            if(isset($_SESSION['username'])){
-                if ($_SESSION['username'] == $row['username'] || $_SESSION['isAdmin'] == true ||
-                    $_SESSION['isAdmin'] == 1)
-                {
-                    echo '<button id="deletePost" type="button" value="delete">DELETE</button>';
-                }
-            }
-            echo    '<h3>'.$row['title'].'</h3>
+                    echo '<h3>'.$row['title'].'</h3>
                     <p>'.$row['content'].'</p>
                     <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>
+                    if(isset($_SESSION['username'])){
+                    if ($_SESSION['username'] == $row['username'] || $_SESSION['isAdmin'] == true ||
+                        $_SESSION['isAdmin'] == 1)
+                        {
+                            echo '<button id="deletePost" type="button" value="delete">DELETE</button>';
+                        }
+                    }
                   </article>';
             include 'getSumOfLikesForPost.php';
             include 'partials/like-form.php';
