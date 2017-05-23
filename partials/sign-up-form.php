@@ -1,6 +1,5 @@
-<form id="sign-up-form" class="sign-up-form col-sm-4" method="post">
+<form id="sign-up-form" class="sign-up-form col-sm-6" method="post">
     <h3>Sign up</h3>
-    <h5><a href="#">Already a user?</a></h5>
 
     <div id="ajax-msg" class="error-msg"></div>
 
@@ -20,7 +19,7 @@
 
     <label>Choose User Type</label>
     <label for="normal">Normal User</label>
-    <input type="radio" id="normal" name="isAdmin" value="0" checked="checked">
+    <input type="radio" id="normal" name="isAdmin" value="0" checked>
     <label for="admin">Admin</label>
     <input type="radio" id="admin" name="isAdmin" value="1">
 

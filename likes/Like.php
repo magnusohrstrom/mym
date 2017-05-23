@@ -1,27 +1,20 @@
 <?php
 include 'error.php';
+
 class Like {
-    private $postId;
-    private $userId;
-    private $pdo;
-    public function __construct($pdo)
-    {
-        $this->pdo = $pdo;
-    }
-    /*
-    public function insertLike()
-    {
-    $st = $this->pdo->prepare('INSERT INTO likes (userId, postId)
-        VALUES (:userId,:postId)');
-      $st->execute([
-        ":userId" => $this->userId,
-        ":postId" => $this->postId
-      ]);
-    }  */
-    public function checkLike($userId,$postId)
-    {
-        $st = $this->pdo->prepare(
-            'SELECT userId, postId FROM likes
+  private $postId;
+  private $userId;
+  private $pdo;
+
+  public function __construct($pdo)
+  {
+    $this->pdo = $pdo;
+  }
+
+  public function checkLike($userId,$postId)
+  {
+    $st = $this->pdo->prepare(
+      'SELECT userId, postId FROM likes
         where postId = :postId and userId = :userId');
         $st->execute([
             ':postId' => $postId,
@@ -46,8 +39,8 @@ class Like {
     public function deleteLike($userId, $postId)
     {
         $st = $this->pdo->prepare('
-    DELETE FROM likes WHERE postId = :postId
-    AND userId = :userId');
+        DELETE FROM likes WHERE postId = :postId
+        AND userId = :userId');
         $st->execute([
             ":userId" => $userId,
             ":postId" => $postId
