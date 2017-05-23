@@ -11,7 +11,7 @@ class getPosts
     }
 
     public function getPosts()
-    { 
+    {
         $getPosts = $this->pdo->prepare(
             "SELECT post.title, post.content, post.timeStamp, user.username, post.postId FROM post
               INNER JOIN user on post.userId = user.userId ORDER BY postId DESC");
@@ -22,7 +22,7 @@ class getPosts
                   <article class="">';
                     echo '<h3>'.$row['title'].'</h3>
                     <p>'.$row['content'].'</p>
-                    <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>
+                    <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>';
                     if(isset($_SESSION['username'])){
                     if ($_SESSION['username'] == $row['username'] || $_SESSION['isAdmin'] == true ||
                         $_SESSION['isAdmin'] == 1)
@@ -30,7 +30,7 @@ class getPosts
                             echo '<button id="deletePost" type="button" value="delete">DELETE</button>';
                         }
                     }
-                  </article>';
+                  echo '</article>';
             include 'getSumOfLikesForPost.php';
             include 'partials/like-form.php';
             echo '</section>';
