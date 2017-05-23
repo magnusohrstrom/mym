@@ -447,10 +447,10 @@ main {
       -ms-justify-content: center;
       justify-content: center;
       -ms-flex-pack: center;
-      -webkit-align-items: flex-start;
-      -moz-align-items: flex-start;
-      -ms-align-items: flex-start;
-      align-items: flex-start;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      align-items: center;
       -webkit-flex-direction: column;
       -moz-flex-direction: column;
       -ms-flex-direction: column;
