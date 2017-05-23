@@ -18,6 +18,7 @@ class getPosts
         $getPosts->execute();
         $post = $getPosts->fetchAll();
         foreach ($post as $row){
+
             echo '<section class="col-sm-6 post-section" id="'.$row['postId'].'">
                   <article class="">';
                     echo '<h3>'.$row['title'].'</h3>
