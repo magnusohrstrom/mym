@@ -1,3 +1,7 @@
+<?php
+include 'posts/postLoader.php';
+include 'posts/deleteLoader.php';
+?>
 <form class="post-form col-sm-4" action="" method="post" id="post-form">
   <h3>Post</h3>
     <div id="error"></div>
