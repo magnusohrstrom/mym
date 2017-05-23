@@ -1,17 +1,22 @@
 $grey:#9F9AA4;
 $siris: #C4055E;
 $darkgrey:#344055;
+$colblue: #C2DAE7;
+$mediumblue: #000325;//#001BD1;
 $blue:#266DD3;
+$pink:#545677;
 $font-abel: 'Abel', sans-serif;
 $font-serif: 'Playfair Display', serif;
 
 //Typography
-h1,h2,h3,h4,h5, label, .header-title, .likeP {
+h1,h2,h3,h4,h5, a, label, .header-title, .likeP {
 font-family: $font-abel;
+letter-spacing: 0.15em;
 }
 
 p{
   font-family: $font-serif;
+  letter-spacing: 0.15em;
 }
 a {
   text-decoration: none;
@@ -209,11 +214,11 @@ $breakpoints: ( 'xxsmall': ( max-width: 360px),'xsmall': ( max-width: 375px), 's
     @if $type=='hide' {
         visibility: hidden;
         opacity: 0;
-        transition: visibility 1s, opacity 1s;
+        transition: visibility 0.7s, opacity 0.7s;
     }
     @else if $type=='show' {
         visibility: visible;
         opacity: 1;
-        transition: visibility 1s, opacity 1s;
+        transition: visibility 0.7s, opacity 0.7s;
     }
 }

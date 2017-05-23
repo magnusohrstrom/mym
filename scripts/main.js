@@ -7,7 +7,7 @@ let mym = (function(){
 
       var ajaxInsertLike = function() {
         //let postId = this.parentNode.parentNode.id;
-        console.log(this);
+        //console.log(this);
         $.ajax({
           url:'likes/insertLike.php',
           method: 'post',
@@ -20,7 +20,7 @@ let mym = (function(){
       for (var i = 0; i < likeButtons.length; i++) {
         likeButtons[i].addEventListener('submit', function(event) {
           event.preventDefault();
-          console.log(this);
+          //console.log(this);
           ajaxInsertLike();
         });
       }
@@ -60,22 +60,73 @@ let mym = (function(){
         st <= leng ? document.getElementsByTagName(tagName)[0].classList.remove(className):
           document.getElementsByTagName(tagName)[0].classList.add(className);
 
-        console.log(st);
+        //console.log(st);
       });
     },
 
-    showFormOnClick: (id,form) => {
-      document.getElementById(id).addEventListener('click',function(){
-      document.getElementById(form).classList.toggle('active');
+    detectScrollOnMultipleElem: (leng, className, cl) => {
+
+      $(window).on('scroll', function() {
+        st = $(this).scrollTop();
+        let arr = document.getElementsByClassName(className);
+        if(st <= leng){
+          for (var i = 0; i < arr.length; i++) {
+            arr[i].classList.remove(cl);
+          }
+        }
+        else{
+          for (var i = 0; i < arr.length; i++) {
+            arr[i].classList.add(cl);
+          }
+        }
+      });
+    },
+
+    showFormOnClick: (id,form,className) => {
+      if(document.getElementById(id))
+      {
+        document.getElementById(id).addEventListener('click',function(){
+          document.getElementById(form).classList.toggle(className);
+      });}
+    },
+
+    closeOverlayOnNavA:function(id, className){
+      if(document.getElementById(id).children){
+        let kids = document.getElementById(id).children;
+        for (var i = 0; i < kids.length; i++) {
+          console.log(kids[i]);
+          kids[i].addEventListener('click', function(){
+            document.getElementById(id).classList.toggle(className);
+            $('#nav-icon1').toggleClass('open');
+          });
+        }
+      }
+    },
+    hamburger: () => {
+
+      $(document).ready(function(){
+      	       $('#nav-icon1').click(function(){
+                 document.getElementById('nav-bar').classList.toggle('clicked');
+                  //mym.showFormOnClick('nav-icon1', 'nav-bar', 'clicked');
+                 $(this).toggleClass('open');
+                 });
       });
 
+
+
+
     },
+
     init: () => {
+
       mym.detectScrollLength(200, 'nav-title','nav-bar','body', 'active');
+      mym.detectScrollOnMultipleElem(2800,'post-section','active');
       mym.detectScrollLength(2800, 'nav-title','nav-bar' ,'body', 'active2');
       mym.smoothScrollAhref();
-      mym.showFormOnClick('sign-up','sign-up-form');
-
+      mym.showFormOnClick('sign-up','sign-up-form', 'active');
+      mym.showFormOnClick('post-form-a', 'post-form','active');
+      mym.hamburger();
+      mym.closeOverlayOnNavA('nav-bar', 'clicked');
       //mym.gett();
     }
   }

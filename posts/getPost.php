@@ -19,20 +19,26 @@ class getPosts
         $post = $getPosts->fetchAll();
         foreach ($post as $row){
             echo '<section class="col-sm-6 post-section" id="'.$row['postId'].'">
-                  <article class="">
-                    <h3>'.$row['title'].'</h3>
+                  <article class="">';
+                    echo '<h3>'.$row['title'].'</h3>
                     <p>'.$row['content'].'</p>
-                    <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>
-                  </article>';
+                    <label>' .$row['timeStamp'] . ' by ' . $row['username'] . '</label>';
+                    if(isset($_SESSION['username'])){
+                    if ($_SESSION['username'] == $row['username'] || $_SESSION['isAdmin'] == true ||
+                        $_SESSION['isAdmin'] == 1)
+                        {
+                            echo '<button id="deletePost" type="button" value="delete">DELETE</button>';
+                        }
+                    }
+                  echo '</article>';
             include 'getSumOfLikesForPost.php';
             include 'partials/like-form.php';
             echo '</section>';
           /*
-include 'database/pdo.php';
+          include 'database/pdo.php';
           $likesToEcho = new Like($pdo);
           echo '<p>'.$likesToEcho->getLikesForPost($row['postId']).' has liked this post.</p></section>';*/
-
-
         }
+
     }
 }

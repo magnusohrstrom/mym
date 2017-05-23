@@ -1,9 +1,11 @@
 <?php
 //include '../database/connection.php';
 //include 'database/connection.php';
-include 'getPost.php';
 
-$pdo = db::connection();
+  include 'getPost.php';
 
-$postList = new getPosts($pdo);
-$postList->getPosts();
+  $pdo = db::connection();
+
+  $postList = new getPosts($pdo);
+  $postList->getPosts();
+
