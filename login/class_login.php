@@ -30,20 +30,9 @@ class Login
         endif;
     }
 
-    /*
-    public function check_admin($name)
-    {
-        $sql = "SELECT isAdmin FROM user WHERE username = :username";
-        $st = $this->pdo->prepare($sql);
-        $st->execute([':username' => $name]);
-        $_SESSION['admin'] = $st->fetch();
-        return $_SESSION['admin'];
-    }
-    */
-
     public function create_session($userArray, $username)
     {
-        $_SESSION['username'] = (!empty($userArray['first'])) ? $userArray['first'] : $username;
+        $_SESSION['username'] = $username;
         $_SESSION['userId'] = $userArray['userId'];
         $_SESSION['first'] = $userArray['first'];
         $_SESSION['last'] = $userArray['last'];
