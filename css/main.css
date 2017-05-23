@@ -41,7 +41,7 @@ form {
   font-size: 1.2em; }
   form input {
     width: 100%;
-    border: 0.1em solid black; }
+    border: none; }
   form label {
     font-size: 1em;
     margin-bottom: -0.15em; }
