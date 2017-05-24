@@ -8,4 +8,5 @@ error_reporting(E_ALL);
 $pdo = db::connection();
 $newPost = new newPost($pdo);
 $newPost->insertPost();
+
 header('Location: ../');
