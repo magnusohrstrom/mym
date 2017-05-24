@@ -69,6 +69,7 @@ include 'comments/Comment.php';
         <script src="scripts/register.js" type="text/javascript"></script>
         <script src="scripts/login.js" type="text/javascript"></script>
         <script src="scripts/post.js" type="text/javascript"></script>
+        <script src="scripts/edit.js" type="text/javascript"></script>
 
     </body>
 </html>

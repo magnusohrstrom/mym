@@ -29,8 +29,8 @@ class getPosts
                     if ($_SESSION['username'] == $row['username'] || $_SESSION['isAdmin'] == true ||
                         $_SESSION['isAdmin'] == 1)
                         {
-                            echo '<button id="deletePost" type="button" value="delete">Delete</button>';
-                            echo '<button class="edit-post-button" type="button" value="">Edit</button>';
+                            echo '<button class="post-buttons" id="deletePost" type="button" value="delete">Delete</button>';
+                            echo '<button class="post-buttons edit-post-button" type="button" value="">Edit</button>';
                         }
                     }
                   echo '</article>';

@@ -17,6 +17,11 @@ let editButtons = document.getElementsByClassName('edit-post-button');
 
 for (var i = 0; i < editButtons.length; i++) {
   editButtons[i].addEventListener('click', function(){
-    this.parentNode.parentNode.children[3].classList.toggle('active');
+    this.parentNode.parentNode.childNodes[4].classList.toggle('active');
+    let editTitle = document.getElementById("editTitle");
+    let editContent = document.getElementById("editContent");
+    editTitle.value = this.parentNode.firstChild.innerHTML;
+    editContent.value = this.parentNode.childNodes[2].innerHTML;
+
   });
 }

@@ -94,7 +94,7 @@ let mym = (function(){
       if(document.getElementById(id).children){
         let kids = document.getElementById(id).children;
         for (var i = 0; i < kids.length; i++) {
-          console.log(kids[i]);
+          //console.log(kids[i]);
           kids[i].addEventListener('click', function(){
             document.getElementById(id).classList.toggle(className);
             $('#nav-icon1').toggleClass('open');
