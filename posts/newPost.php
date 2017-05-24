@@ -18,4 +18,13 @@ class newPost
             ":userId"  => $_SESSION['userId']
         ]);
     }
+    //test Yoko
+    public function get_postId(){
+        $stmt = $this->pdo->prepare(
+            "SELECT postId FROM post WHERE title=:title"
+        );
+        $stmt->execute(
+            ":title"=$_POST['title'];
+        );
+    }
 }
