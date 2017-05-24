@@ -1,5 +1,6 @@
 <?php
 include 'error.php';
+
 class Like {
   private $postId;
   private $userId;
@@ -38,8 +39,8 @@ class Like {
     public function deleteLike($userId, $postId)
     {
         $st = $this->pdo->prepare('
-    DELETE FROM likes WHERE postId = :postId
-    AND userId = :userId');
+        DELETE FROM likes WHERE postId = :postId
+        AND userId = :userId');
         $st->execute([
             ":userId" => $userId,
             ":postId" => $postId
