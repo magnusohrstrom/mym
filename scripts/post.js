@@ -12,3 +12,11 @@ $('#post-form').submit(function(event){
         data: formData
     })
 });
+
+let editButtons = document.getElementsByClassName('edit-post-button');
+
+for (var i = 0; i < editButtons.length; i++) {
+  editButtons[i].addEventListener('click', function(){
+    this.parentNode.parentNode.children[3].classList.toggle('active');
+  });
+}
