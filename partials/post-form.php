@@ -1,4 +1,5 @@
 <?php
+include 'posts/editLoader.php';
 include 'posts/postLoader.php';
 include 'posts/deleteLoader.php';
 ?>
