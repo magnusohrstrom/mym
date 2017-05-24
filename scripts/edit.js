@@ -1,7 +1,8 @@
-$('#edit-post-form').click(function(event){
+$('#edit-sub-button').click(function(event){
     event.preventDefault();
     var that = this;
     console.log("hej");
+    console.log(this);
     var editTitle = document.getElementById("editTitle").value;
     var editContent = document.getElementById("editContent").value;
     $.ajax({
@@ -12,6 +13,6 @@ $('#edit-post-form').click(function(event){
         },
         url: 'posts/editPost.php',
         method: 'post',
-        data: {postId: that.parentNode.getAttribute("id"), editTitle: editTitle, editContent: editContent}
+        data: {postId: that.parentNode.parentNode.parentNode.getAttribute("id"), editTitle: editTitle, editContent: editContent}
     });
 });

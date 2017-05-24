@@ -7,8 +7,8 @@
   <input type="text" name="image" value="">
   <label for="post">Post</label>
   <input id ="editContent" type="text" name="editContent">
-  <div class="btn-group">
-    <input type="submit" class="" name="Save post">Save post</input>
-    <input type="button" name="cancel">Cancel</input>
+  <div class="btn-group grupp">
+    <input type="submit" id="edit-sub-button" class="post-buttons" name="Save" value="Save"></input>
+    <input type="button" class="post-buttons cancel-button" id="deletePosts" name="Cancel" value="Cancel"></input>
   </div>
 </form>
