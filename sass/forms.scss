@@ -129,8 +129,10 @@ form {
   background: $colblue;
   height: 0;
   opacity: 0;
+  margin:0;
   @include fade('hide');
   &.active {
+    margin:inherit;
     @include fade('show');
     height: auto;
     @include transition(all 1s ease);
