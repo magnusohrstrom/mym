@@ -25,3 +25,10 @@ for (var i = 0; i < editButtons.length; i++) {
 
   });
 }
+
+let cancelButtons = document.getElementsByClassName('cancel-button');
+for (var i = 0; i < cancelButtons.length; i++) {
+  cancelButtons[i].addEventListener('click', function(){
+    this.parentNode.parentNode.classList.remove('active');
+  });
+}
