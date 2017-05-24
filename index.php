@@ -59,8 +59,6 @@ include 'comments/Comment.php';
         ?>
 
       </main>
-      <?php include 'partials/footer.php'; ?>
-
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
         <script src="scripts/deletePost.js"></script>
         <script src="scripts/main.js" type="text/javascript"></script>
@@ -70,6 +68,6 @@ include 'comments/Comment.php';
         <script src="scripts/login.js" type="text/javascript"></script>
         <script src="scripts/post.js" type="text/javascript"></script>
         <script src="scripts/edit.js" type="text/javascript"></script>
-
+        <?php include 'partials/footer.php'; ?>
     </body>
 </html>
